@@ -9,10 +9,10 @@ function FormularioCategoria() {
     id:0,
     nome: "",
     descricao: "",
-    disponivel: false
+    disponivel: true
   });
 
-  const[ativo, setAtivo] = useState<boolean>(false)
+  const[ativo, setAtivo] = useState<string>("true")
 
   let navigate = useNavigate();
 
@@ -38,18 +38,18 @@ function FormularioCategoria() {
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setCategoria({
       ...categoria,
-      disponivel: ativo,
       [e.target.name]: e.target.value
     })
 
   }
 
   function handleDisponivel(e: ChangeEvent<HTMLInputElement>){
-    console.log(e.target.value)
+    setAtivo(e.target.value)
+
     if(e.target.value == "true"){
-        setAtivo(true)
+        setCategoria({...categoria, disponivel: true})
     }else {
-        setAtivo(false)
+      setCategoria({...categoria, disponivel: false})
     }
   }
   console.log(JSON.stringify(categoria))
@@ -59,7 +59,7 @@ function FormularioCategoria() {
 
     if (id !== undefined) {
       try {
-        await atualizar(`/categorias`, categoria, setCategoria, {
+        await atualizar(`/categorias/editar`, categoria, setCategoria, {
           headers: {
             'Authorization': token
           }
@@ -111,7 +111,7 @@ function FormularioCategoria() {
       navigate('/login');
     }
   }, [token]);
-
+  console.log(categoria)
   return (
     <div className="container flex flex-col items-center justify-center mx-auto">
       <h1 className="text-4xl text-center my-8">
@@ -149,7 +149,7 @@ function FormularioCategoria() {
                 name="disponivel"
                 className="border-2 border-slate-700 rounded p-2"
                 value="true"
-                onChange={(e: ChangeEvent<HTMLInputElement>) => handleDisponivel(e)}
+                onChange={handleDisponivel}
             />
             {' '}Disponivel
             </label>
@@ -161,7 +161,7 @@ function FormularioCategoria() {
                 name="disponivel"
                 className="border-2 border-slate-700 rounded p-2"
                 value="false"
-                onChange={(e: ChangeEvent<HTMLInputElement>) => handleDisponivel(e)}
+                onChange={handleDisponivel}
             />
             {' '}Indisponivel
             </label>

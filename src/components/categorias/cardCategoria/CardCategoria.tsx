@@ -11,7 +11,7 @@ import Categoria from '../../../models/Categoria'
         <header className='py-2 px-6 bg-[#282424] text-white font-bold text-2xl'>Categoria</header>
         <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.nome}</p>
         <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.descricao}</p>
-        <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.disponivel}</p>
+        <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.disponivel ? 'Disponivel': 'Indisponivel'}</p>
         <div className="flex">
             <Link to={`/editarCategoria/${categoria.id}`} className='w-full text-slate-100 bg-indigo-500 hover:bg-indigo-800 flex items-center justify-center py-2'>
             <button>Editar</button>
