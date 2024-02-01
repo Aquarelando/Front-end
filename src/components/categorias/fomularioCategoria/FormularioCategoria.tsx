@@ -5,7 +5,14 @@ import { atualizar, buscar, cadastrar } from '../../../services/Services';
 import Categoria from '../../../models/Categoria';
 
 function FormularioCategoria() {
-  const [categoria, setCategoria] = useState<Categoria>({} as Categoria);
+  const [categoria, setCategoria] = useState<Categoria>({
+    id:0,
+    nome: "",
+    descricao: "",
+    disponivel: false
+  });
+
+  const[ativo, setAtivo] = useState<boolean>(false)
 
   let navigate = useNavigate();
 
@@ -31,11 +38,21 @@ function FormularioCategoria() {
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setCategoria({
       ...categoria,
+      disponivel: ativo,
       [e.target.name]: e.target.value
     })
 
-    console.log(JSON.stringify(categoria))
   }
+
+  function handleDisponivel(e: ChangeEvent<HTMLInputElement>){
+    console.log(e.target.value)
+    if(e.target.value == "true"){
+        setAtivo(true)
+    }else {
+        setAtivo(false)
+    }
+  }
+  console.log(JSON.stringify(categoria))
 
   async function gerarNovaCategoria(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -63,7 +80,7 @@ function FormularioCategoria() {
 
     } else {
       try {
-        await cadastrar(`/categorias`, categoria, setCategoria, {
+        await cadastrar(`/categorias/novo`, categoria, setCategoria, {
           headers: {
             'Authorization': token
           }
@@ -124,16 +141,30 @@ function FormularioCategoria() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="disponivel">Disponibilidade da Categoria</label>
-          <input
-            type="checkbox"
-            id="Disponivel"
-            name='disponivel'
-            className="border-2 border-slate-700 rounded p-2"
-            checked={categoria.disponivel}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+        <div className="flex flex-col w-full">
+          <label htmlFor="ativo">
+            <input
+                type="radio"
+                id="ativo"
+                name="disponivel"
+                className="border-2 border-slate-700 rounded p-2"
+                value="true"
+                onChange={(e: ChangeEvent<HTMLInputElement>) => handleDisponivel(e)}
+            />
+            {' '}Disponivel
+            </label>
+
+            <label htmlFor="inativo">
+            <input
+                type="radio"
+                id="inativo"
+                name="disponivel"
+                className="border-2 border-slate-700 rounded p-2"
+                value="false"
+                onChange={(e: ChangeEvent<HTMLInputElement>) => handleDisponivel(e)}
+            />
+            {' '}Indisponivel
+            </label>
         </div>
         <button
           className="rounded text-slate-100 bg-[#4F4F4F] hover:bg-[#696969] w-1/2 py-2 mx-auto block"

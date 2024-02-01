@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { AuthContext } from '../../../contexts/AuthContext'
 import { buscar, deletar } from '../../../services/Services'
@@ -48,7 +48,7 @@ function DeletarCategoria() {
 
     async function deletarCategoria() {
         try {
-            await deletar(`/categorias/${id}`, {
+            await deletar(`/categorias/deletar/${id}`, {
                 headers: {
                     'Authorization': token
                 }
