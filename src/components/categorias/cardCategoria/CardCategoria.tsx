@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import Categoria from '../../../models/Categoria'
 
@@ -6,7 +5,7 @@ import Categoria from '../../../models/Categoria'
     categoria: Categoria
     }
 
-    function CardTemas({categoria}: CardCategoriaProps) {
+    function CardCategorias({categoria}: CardCategoriaProps) {
     return (
         <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
         <header className='py-2 px-6 bg-[#282424] text-white font-bold text-2xl'>Categoria</header>
@@ -25,4 +24,4 @@ import Categoria from '../../../models/Categoria'
     )
     }
 
-    export default CardTemas
+    export default CardCategorias

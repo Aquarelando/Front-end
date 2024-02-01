@@ -23,7 +23,7 @@ function Navbar() {
 
                     <div className='flex gap-4'>
                         <Link to='/produto'>Produto</Link>
-                        <Link to='/categoria'>Categoria</Link>
+                        <Link to='/categorias'>Categorias</Link>
                         <Link to='/cadastroCategoria'>Cadastrar Categoria</Link>
                         <Link to='/perfil'>Perfil</Link>
                         <Link to='' onClick={logout}>Sair</Link>
@@ -39,7 +39,7 @@ function Navbar() {
 
                     <div className='flex gap-4'>
                         <Link to='/produto'>Produto</Link>
-                        <Link to='/categoria'>Categoria</Link>
+                        <Link to='/categorias'>Categorias</Link>
                         <Link to='/perfil'>Perfil</Link>
                         <Link to='' onClick={logout}>Sair</Link>
                     </div>

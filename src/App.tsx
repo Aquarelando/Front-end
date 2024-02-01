@@ -7,6 +7,8 @@ import Sobre from './paginas/sobre/Sobre';
 import Home from './paginas/home/Home';
 import Cadastro from './paginas/cadastro/Cadastro';
 import { AuthProvider } from './contexts/AuthContext';
+import FormularioCategoria from './components/categorias/fomularioCategoria/FormularioCategoria';
+import ListaCategoria from './components/categorias/listaCategoria/ListaCategoria';
 
 
 function App() {
@@ -22,6 +24,9 @@ function App() {
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/categorias" element={<ListaCategoria />} />
+            <Route path="/cadastroCategoria" element={<FormularioCategoria />} />
+            <Route path="/editarCategoria/:id" element={<FormularioCategoria />} />
             </Routes>
           </div>
           <Footer />
