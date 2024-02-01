@@ -1,4 +1,3 @@
-import React from 'react';
 
 import Navbar from './components/navbar/NavBar';
 import Footer from './components/footer/Footer';
@@ -18,7 +17,6 @@ function App() {
           <Navbar />
           <div className='min-h-[80vh]'>
             <Routes>
-            <Route path="/" element={<Cadastro />} />
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/sobre" element={<Sobre />} />

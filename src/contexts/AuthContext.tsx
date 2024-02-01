@@ -22,6 +22,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const [usuario, setUsuario] = useState<UsuarioLogin>({
         id: 0,
         nome: "",
+        tipo: "",
         data_nascimento: "",
         cpf: "",
         foto: "",
@@ -51,6 +52,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setUsuario({
             id: 0,
             nome: "",
+            tipo: "",
             data_nascimento: "",
             cpf: "",
             foto: "",
