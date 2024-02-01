@@ -33,6 +33,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const [isLoading, setIsLoading] = useState(false)
 
     async function handleLogin(userLogin: UsuarioLogin) {
+        console.log(userLogin)
         setIsLoading(true)
         try {
             await login(`/usuarios/logar`, userLogin, setUsuario)
