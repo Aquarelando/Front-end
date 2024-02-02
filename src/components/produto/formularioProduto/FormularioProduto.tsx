@@ -9,6 +9,8 @@ import { buscar, atualizar, cadastrar } from '../../../services/Services';
 function FormularioProduto() {
   let navigate = useNavigate();
 
+  const[valido, setValido] = useState<string>("true")
+
   const { id } = useParams<{ id: string }>();
 
   const { usuario, handleLogout } = useContext(AuthContext);
@@ -92,15 +94,14 @@ function FormularioProduto() {
     });
   }
 
-  const[ativo, setAtivo] = useState<string>("true")
 
   function retornar() {
     navigate('/produtos');
   }
 
   function handleSelo(e: ChangeEvent<HTMLInputElement>){
-    setAtivo(e.target.value)
-
+    setValido(e.target.value)
+    console.log(produto)
     if(e.target.value == "true"){
         setProduto({...produto, seloInmetro: true})
     }else {
@@ -108,14 +109,14 @@ function FormularioProduto() {
     }
   }
 
-  async function gerarNovaProduto(e: ChangeEvent<HTMLFormElement>) {
+  async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
     console.log({ produto });
 
     if (id != undefined) {
       try {
-        await atualizar(`/produto`, produto, setProduto, {
+        await atualizar(`/produtos/editar`, produto, setProduto, {
           headers: {
             Authorization: token,
           },
@@ -132,14 +133,14 @@ function FormularioProduto() {
       }
     } else {
       try {
-        await cadastrar(`/produtos`, produto, setProduto, {
+        await cadastrar(`/produtos/novo`, produto, setProduto, {
           headers: {
-            Authorization: token,
-          },
-        });
+            'Authorization': token,
+          }
+        })
 
-        alert('Produto cadastrada com sucesso');
-        retornar();
+        alert('Produto cadastrada com sucesso')
+        
       } catch (error: any) {
         if (error.toString().includes('403')) {
           alert('O token expirou, favor logar novamente')
@@ -149,17 +150,19 @@ function FormularioProduto() {
         }
       }
     }
+
+    retornar()
   }
 
   const carregandoCategoria = categoria.descricao === '';
 
   return (
-    <div className="container flex flex-col mx-auto items-center bg-gradient-to-b from-[#000000] via-[#4B0082] to-[#4B0082]" style={{ fontFamily: "Josefin Sans, sans-serif" }}>
-      <h1 className="text-4xl text-center my-8 text-white">{id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}</h1>
+    <div className="container flex flex-col mx-auto items-center">
+      <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Produto' : 'Cadastrar um novo Produto'}</h1>
 
-      <form onSubmit={gerarNovaProduto} className="flex flex-col w-1/2 gap-4">
+      <form onSubmit={gerarNovoProduto} className="flex flex-col w-1/2 gap-4">
         <div className="flex flex-col gap-2">
-          <label htmlFor="nome" className='text-white'>Nome do Produto</label>
+          <label htmlFor="nome">Nome do Produto</label>
           <input
             value={produto.nome}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -171,7 +174,7 @@ function FormularioProduto() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="descricao" className='text-white'>Descrição do Produto</label>
+          <label htmlFor="descricao">Descrição do Produto</label>
           <input
             value={produto.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -183,11 +186,11 @@ function FormularioProduto() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="dataValidade" className='text-white'>Data de Validade do Produto</label>
+          <label htmlFor="dataValidade">Data de Validade do Produto</label>
           <input
             value={produto.dataValidade}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="text"
+            type="date"
             placeholder="Data de Validade"
             name="dataValidade"
             required
@@ -195,11 +198,11 @@ function FormularioProduto() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="quantidade" className='text-white'>Quantidade do Produto</label>
+          <label htmlFor="quantidade">Quantidade do Produto</label>
           <input
             value={produto.quantidade}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="text"
+            type="number"
             placeholder="Quantidade"
             name="quantidade"
             required
@@ -207,7 +210,7 @@ function FormularioProduto() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="foto" className='text-white'>Foto do Produto</label>
+          <label htmlFor="foto">Foto do Produto</label>
           <input
             value={produto.foto}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -222,7 +225,7 @@ function FormularioProduto() {
           <label htmlFor="ativo">
             <input
                 type="radio"
-                id="ativo"
+                id="valido"
                 name="disponivel"
                 className="border-2 border-slate-700 rounded p-2"
                 value="true"
@@ -234,20 +237,32 @@ function FormularioProduto() {
             <label htmlFor="inativo">
             <input
                 type="radio"
-                id="inativo"
+                id="invalido"
                 name="disponivel"
                 className="border-2 border-slate-700 rounded p-2"
                 value="false"
                 onChange={handleSelo}
             />
-            {' '}Possui Selo Inmetro
+            {' '}Não Possui Selo Inmetro
             </label>
         </div>
         <div className="flex flex-col gap-2">
-          <p className='text-white'>Nome da Categoria</p>
+          <label htmlFor="preco">Preço do Produto</label>
+          <input
+            value={produto.preco}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            type="number"
+            placeholder="Preço"
+            name="preco"
+            required
+            className="border-2 border-slate-700 rounded p-2"
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <p>Nome da Categoria</p>
           <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
             <option value="" selected disabled>Selecione uma Categoria</option>
-            {categoria.map((categorias) => (
+            {categorias.map((categoria) => (
               <>
                 <option value={categoria.id} >{categoria.descricao}</option>
               </>

@@ -22,7 +22,8 @@ function Navbar() {
                     <Link to='/home' className='text-2xl font-bold uppercase'>Aquarelando</Link>
 
                     <div className='flex gap-4'>
-                        <Link to='/produto'>Produto</Link>
+                        <Link to='/produtos'>Produtos</Link>
+                        <Link to='/cadastroProduto'>Cadastrar Produto</Link>
                         <Link to='/categorias'>Categorias</Link>
                         <Link to='/cadastroCategoria'>Cadastrar Categoria</Link>
                         <Link to='/perfil'>Perfil</Link>
