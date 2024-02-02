@@ -6,7 +6,7 @@ export default interface Produto {
   nome: string;
   descricao: string;
   dataValidade: string;
-  quantidade: BigInteger;
+  quantidade: number;
   foto: string;
   seloInmetro: boolean;
   preco: number;
