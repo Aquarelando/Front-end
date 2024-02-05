@@ -3,8 +3,9 @@ import { Dna } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { buscar } from '../../../services/Services';
-import CardPostagem from '../cardProduto/CardProduto';
+import CardProduto from '../cardProduto/CardProduto';
 import Produtos from '../../../models/Produtos';
+import CardProdutoUsuario from '../cardProdutoUsuario/CardProdutoUsuario';
 
 
 function ListaProdutos() {
@@ -53,9 +54,19 @@ function ListaProdutos() {
         />
       )}
       <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-        {produtos.map((produto) => (
-          <CardPostagem key={produto.id} produto={produto} />
-        ))}
+        {usuario.tipo === 'dev' ? (
+            produtos.map((produto) => (
+
+              <CardProduto key={produto.id} produto={produto} />
+            ))
+          
+        ) : (
+            produtos.map((produto) => (
+
+              <CardProdutoUsuario key={produto.id} produto={produto} />
+            ))
+        )}
+        
       </div>
     </>
   );

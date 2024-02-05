@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import homeLogo from '../../assets/Logo.png'
 import { UserContext } from '../../contexts/UserContext';
 import { Link, useNavigate } from 'react-router-dom';
+import Carrossel from '../../components/carrosel/Carrossel';
+import ListaProduto from '../../components/produto/listaProduto/ListaProduto';
 
 function Home()  {
 
@@ -25,6 +27,13 @@ function Home()  {
         </div>
 
       </div>
+    </div>
+
+    <div>
+
+      <Carrossel />
+
+      <ListaProduto />
     </div>
   
   </>
