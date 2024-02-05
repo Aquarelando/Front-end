@@ -10,7 +10,7 @@ function Navbar() {
     function logout() {
         handleLogout()
         alert('Usuário deslogado com sucesso')
-        navigate('/login')
+        navigate('/login') 
     }
 
     let navbarComponent
