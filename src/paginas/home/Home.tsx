@@ -3,7 +3,7 @@ import homeLogo from '../../assets/Logo.png'
 import { UserContext } from '../../contexts/UserContext';
 import { Link, useNavigate } from 'react-router-dom';
 
-function Home() {
+function Home()  {
 
   return (
     <>
