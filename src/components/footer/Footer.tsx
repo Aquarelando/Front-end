@@ -48,36 +48,36 @@ function Footer(){
             </p>
             <ul className="flex items-center gap-2">
               <a
-                href="https://www.youtube.com/@reactjsBD"
+                href="https://www.youtube.com/aquarelandoorg"
                 target="_blank"
-                rel="noreferrer"
+                rel="aquarelandoorg"
               >
                 <li className="flex items-center justify-center text-lg text-gray-100 duration-300 rounded-full cursor-pointer w-7 h-7 bg-primeColor hover:text-white hover:bg-black">
                   <AiOutlineYoutube />
                 </li>
               </a>
               <a
-                href="https://github.com/noorjsdivs"
+                href="https://github.com/aquarelandoorg"
                 target="_blank"
-                rel="noreferrer"
+                rel="aquarelandoorg"
               >
                 <li className="flex items-center justify-center text-lg text-gray-100 duration-300 rounded-full cursor-pointer w-7 h-7 bg-primeColor hover:text-white hover:bg-black">
                   <AiFillGithub />
                 </li>
               </a>
               <a
-                href="https://www.facebook.com/Noorlalu143/"
+                href="https://www.facebook.com/aquarelandoorg"
                 target="_blank"
-                rel="noreferrer"
+                rel="aquarelandoorg"
               >
                 <li className="flex items-center justify-center text-lg text-gray-100 duration-300 rounded-full cursor-pointer w-7 h-7 bg-primeColor hover:text-white hover:bg-black">
                 <CgFacebook />
                 </li>
               </a>
               <a
-                href="https://www.linkedin.com/in/noor-mohammad-ab2245193/"
+                href="https://www.linkedin.com/in/aquarelandoorg"
                 target="_blank"
-                rel="noreferrer"
+                rel="aquarelandoorg"
               >
                 <li className="flex items-center justify-center text-lg text-gray-100 duration-300 rounded-full cursor-pointer w-7 h-7 bg-primeColor hover:text-white hover:bg-black">
                   <AiFillLinkedin />
@@ -87,7 +87,7 @@ function Footer(){
           </div>
         </div>
         <div>
-          <FooterListaTitulo title="Shop" />
+          <FooterListaTitulo title="Links Uteis" />
           <ul className="flex flex-col gap-2">
             <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
               Mochilas

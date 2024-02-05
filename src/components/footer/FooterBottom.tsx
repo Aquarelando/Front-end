@@ -11,7 +11,7 @@ const data = new Date().getFullYear()
             <AiOutlineCopyright />
           </span>
           Copyright {data} | Aquarelando | todos os direitos reservados |
-          <a href="/" target="_blank" rel="noreferrer">
+          <a href="/" target="_blank" rel="aquarelandoorg">
             <span className="ml-1 font-medium group-hover:text-primeColor">
             
             </span>
