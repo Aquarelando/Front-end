@@ -18,7 +18,7 @@ function Navbar() {
 
     if (usuario.email == "root@root.com") {
         navbarComponent = (
-            <div className='w-full bg-indigo-900 text-white flex justify-center py-4'>
+            <div className='w-full bg-[#439da6] text-white flex justify-center py-4 border-b-[1] border-grey'>
                 <div className="container flex justify-between text-lg">
                     <Link to='/home' className='text-2xl font-bold uppercase'>Aquarelando</Link>
 
@@ -34,12 +34,12 @@ function Navbar() {
                 </div>
             </div>
         )
-    } else if (usuario.tipo == "user") {
+    } else {
         navbarComponent = (
-            <div className='w-full bg-indigo-900 text-white flex justify-center py-4'>
+            <div className='w-full bg-[#439da6] text-white flex justify-center py-4 border-b-[1px] border-grey'>
                 <div className="container flex justify-between text-lg">
                     <Link to='/home' className='text-2xl font-bold uppercase'>Aquarelando</Link>
-
+                    
                     <div className='flex gap-4'>
                         <Link to='/produtos'>Produto</Link>
                         <Link to='/categorias'>Categorias</Link>
@@ -48,6 +48,7 @@ function Navbar() {
                         <Link to='/cart'><ShoppingCart size={32} weight='bold' /></Link>
                     </div>
                 </div>
+                <hr />
             </div>
         )
     }

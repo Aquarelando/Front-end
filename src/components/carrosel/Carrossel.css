@@ -17,3 +17,7 @@
     height: 100%;
     object-fit: cover;
   }
+
+  body{
+    background-color: #F6F2F0;
+  }

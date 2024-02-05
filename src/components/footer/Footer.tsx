@@ -10,10 +10,10 @@ function Footer() {
 
   let data = new Date().getFullYear()
 
-  if(usuario.token !== '') {
+  if(usuario.token == '') {
     footerComponent = (
       <>
-        <div className="flex justify-center bg-gradient-to-b from-[#000000] via-[#4B0082] to-[#4B0082] text-white" style={{ fontFamily: "Honk, sans-serif" }}>
+        <div className="flex justify-center bg-[#F6F2F0] text-grey" style={{ fontFamily: "Honk, sans-serif" }}>
           <div className="container flex flex-col items-center py-4">
             <p className='text-3xl font-bold' >Geek News | Copyright: {data}</p>
             <p className='text-2xl'>Acesse minhas redes sociais</p>

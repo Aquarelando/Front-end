@@ -17,7 +17,7 @@ function ListaProdutos() {
   const token = usuario.token;
 
   useEffect(() => {
-    if (token === '') {
+    if (token !== '') {
       alert('Você precisa estar logado');
       navigate('/');
     }
