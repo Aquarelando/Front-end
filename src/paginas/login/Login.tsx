@@ -97,7 +97,7 @@ function Login() {
                   <span className="text-lg font-semibold text-white">Login</span>
                 </button>
                 <a href="#" type="reset" className="w-full px-2 py-3 ">
-                  <span className="text-sm tracking-wide text-white "><Link to={'/cadastro'}>Ainda nÃ£o tem uma conta? Registre-se agora!</Link></span>
+                  <span className="text-sm tracking-wide text-white "><Link to={'/cadastro'}>Ainda não tem uma conta? Registre-se agora!</Link></span>
                 </a>
               </div>
             </form>
