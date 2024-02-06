@@ -1,6 +1,9 @@
+@font-face {
+  font-family: 'Lovelo';
+  src: url('../../../public/fonts/Lovelo.otf') format('truetype');
+}
 
- 
- .caixa {
+.caixa {
     display:flex;
   }
 

@@ -37,8 +37,8 @@ function Home() {
             </div>
           </div>
 
-           <div className="flex flex-col gap-4 items-center justify-center py-4 text-white">
-          <h2 className='text-5xl font-bound'>BEM VINDO(A)!</h2>
+          <div className="flex flex-col gap-4 items-center justify-center py-4 text-white">
+          <h2 className='text-5xl font-bound' style={{ fontFamily: 'Lovelo, sans-serif' }}>BEM VINDO(A)!</h2>
           <p className='text-xl'>Ajude a colorir o caminho da nova geração com a Aquarelando! Todos os lucros das compras irão diretamente para ONGs educacionais.</p>
 
           <div className="flex justify-around gap-4">
