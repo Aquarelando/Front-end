@@ -28,15 +28,15 @@ function Navbar() {
     } else{ 
         if (usuario.tipo === "dev") {
             navbarComponent = (
-                <div className='w-full background py-4 px-4border-b-[1px] border-white links'>
+                <div className='w-full background py-4 px-4border-b-[1px] border-white'>
                     <div className="container flex items-center ml-12">
                         <div className="container flex items-center justify-between">
 
-                        <Link to='/home' className='font-semibold uppercase flex items-center ml-0 mr-20'>
+                        <Link to='/home' className='font-semibold uppercase flex items-center ml-0 mr-20 logo-container'>
                             <img src={paintLogo} alt="Paint logo" className="mr-2 leading-7 logo"/>
                                 Aquarelando 
                             </Link>
-                            <div className='links font-light'>
+                            <div className='links font-light links'>
                                     <Link to='/produtos' className='mr-8 '>Produtos</Link>
                                     <Link to='/cadastroProduto' className='mr-8'>Cadastrar Produto</Link>
                                     <Link to='/categorias' className='mr-8'>Categorias</Link>
@@ -52,19 +52,19 @@ function Navbar() {
             // USUÁRIO DESLOGADO: BOTÃO LOGAR
         } else if (usuario.token == ""){
             navbarComponent = (
-                <div className='w-full background py-4 border-b-[1px] border-white links'>
+                <div className='w-full background py-4 border-b-[1px] border-white'>
                     <div className="container flex items-center ml-12">
-                        <Link to='/home' className='font-semibold uppercase flex items-center ml-0 mr-20'>
+                        <Link to='/home' className='font-semibold uppercase flex items-center ml-0 mr-20 logo-container'>
                             <img src={paintLogo} alt="Paint logo" className="mr-2 leading-7 logo"/>
                             Aquarelando 
                         </Link>
-                        <div className='links font-light'>
+                        <div className='links font-light links'>
                             <Link to='/home' className='mr-8'>HOME</Link>
                             <Link to='/produtos' className='mr-8'>PRODUTOS</Link>
                             <Link to='/sobre' className='mr-8'>SOBRE</Link>
                         </div>
                     </div>
-                    <div className='flex gap-5 links mr-12'>      
+                    <div className='flex gap-5 mr-12'>      
                         <Link to='/login'><img src={ShoppingCart} alt="Carrinho" className="mr-2 carrinho mt-0"/></Link>
                         <Link to='/login' className='rounded-full bg-[#fd98b4] text-white py-1 px-4'>Login/Cadastro</Link>                         
                     </div>
@@ -75,13 +75,13 @@ function Navbar() {
             //USUÁRIO LOGADO: BOTÃO DESLOGAR, PERFIL
         } else {
             navbarComponent = (
-                <div className='w-full background py-4 border-b-[1px] border-white links'>
+                <div className='w-full background py-4 border-b-[1px] border-white'>
                     <div className="container flex items-center ml-12">
-                        <Link to='/home' className='font-semibold uppercase flex items-center ml-0 mr-20'>
+                        <Link to='/home' className='font-semibold uppercase flex items-center ml-0 mr-20 logo-container'>
                             <img src={paintLogo} alt="Paint logo" className="mr-2 leading-7 logo"/>
                             Aquarelando 
                         </Link>
-                        <div className='font-light'>
+                        <div className='font-light links'>
                             <Link to='/home' className='mr-8'>HOME</Link>
                             <Link to='/produtos' className='mr-8'>PRODUTOS</Link>
                             <Link to='/sobre' className='mr-8'>SOBRE</Link>

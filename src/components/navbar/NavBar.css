@@ -1,10 +1,9 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap');
 
 
 body {
     font-family: 'Montserrat', sans-serif;
-    font-size: 11.3px;
+    
 }
 
 .background {
@@ -22,14 +21,39 @@ body {
 }
 
 .logo {
-    width: 30px;
-    height: 30px;
+    max-width: 20px;
+    max-height: 20px;
+    font-size: 0.95rem;
 }
+
+.logo:hover {
+    content: url('../../assets/LogoLaranja.png');
+}
+
+.logo-container {
+    font-size: 0.95rem;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+.logo-container:hover {
+    background-image: linear-gradient(to right, #ffb6c1, #ffd700, #98fb98, #add8e6, #dda0dd, #ffb6c1);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    text-decoration: none; 
+}
+
+.logo-container:hover {
+    transform: scale(1.2); /* Adjust the scale factor as needed */
+}  
 
 .carrinho {
     max-width: 30.5px;
     max-height: 30px;
 }
+
 
 .perfil {
     max-width: 30.5px;
@@ -41,4 +65,24 @@ body {
     font-size: 0.95rem;
 }
 
+.links a {
+    position: relative;
+    text-decoration: none;
+    color: inherit; 
+}
 
+.links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* centralizar */
+    width: 0;
+    height: 1px;
+    transition: width 0.5s ease; /* tempo de duração */
+}
+
+.links a:hover::before {
+    width: 100%; 
+    background-image: linear-gradient(to right, #ffb6c1, #ffd700, #98fb98, #add8e6, #dda0dd, #ffb6c1);
+}
