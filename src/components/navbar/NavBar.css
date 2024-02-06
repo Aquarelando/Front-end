@@ -1,13 +1,44 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap');
+
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 11.3px;
 }
 
+.background {
+    background-color: #439da6;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+}
+
+.flex {
+    display: flex;
+    gap: 5px;
+    align-items: center; 
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+}
+
+.carrinho {
+    max-width: 30.5px;
+    max-height: 30px;
+}
+
+.perfil {
+    max-width: 30.5px;
+    max-height: 30px;
+}
+
+
 .links {
     font-size: 0.95rem;
 }
-    
-.link-item {
-    margin-right: 30px;
-}
+
 

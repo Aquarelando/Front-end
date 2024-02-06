@@ -78,106 +78,35 @@ function Cadastro() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
-        <div className="fundoCadastro hidden lg:block"></div>
-        <form className='flex justify-center items-center flex-col w-2/3 gap-3'onSubmit={cadastrarNovoUsuario} >
-          <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
-          <div className="flex flex-col w-full">
-            <label htmlFor="nome">Nome</label>
-            <input
-              type="text"
-              id="nome"
-              name="nome"
-              placeholder="Nome"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuario.nome} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="usuario">Data de Nascimento</label>
-            <input
-              type="date"
-              id="data_nascimento"
-              name="data_nascimento"
-              placeholder="Data de Nascimento"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuario.data_nascimento} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="foto">CPF</label>
-            <input
-              type="text"
-              id="cpf"
-              name="cpf"
-              placeholder="CPF"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuario.cpf} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="foto">Foto</label>
-            <input
-              type="text"
-              id="foto"
-              name="foto"
-              placeholder="Foto"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuario.foto} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="foto">E-mail</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="E-mail"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuario.email} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="senha">Senha</label>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
-              placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuario.senha} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="confirmarSenha">Confirmar Senha</label>
-            <input
-              type="password"
-              id="confirmarSenha"
-              name="confirmarSenha"
-              placeholder="Confirmar Senha"
-              className="border-2 border-slate-700 rounded p-2"
-              value={confirmaSenha} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
-            />
-          </div>
-          <div className="flex justify-around w-full gap-8">
-            <button className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2' onClick={back}>
-              Cancelar
-            </button>
-            <button className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2' type='submit'>
-              Cadastrar
-            </button>
-          </div>
-        </form>
-      </div>
+<div className="relative flex flex-col items-center justify-center min-h-screen py-6 overflow-hidden bg-creme bg-gray-50 sm:py-12">
+  
+  <div className="p-10 bg-white shadow-lg">
+    
+    <h3 className="mb-10 text-3xl font-bold">Registre-se</h3>
+
+    <form className="grid gap-10 sm:grid-cols-2">
+      
+      <input type="text" name="primeiroNome" id="primeiroNome" className="py-2 pl-2 border-b border-gray-300" placeholder="Nome" />
+      <input type="text" name="sobrenome" id="sobrenome" className="py-2 pl-2 border-b border-gray-300" placeholder="Sobrenome" />
+      <input type="date" name="data_nascimento" id="data_nascimento" className="py-2 pl-2 border-b border-gray-300" placeholder="Data de Nascimento" />
+      <input type="text" name="cpf" id="cpf" className="py-2 pl-2 border-b border-gray-300" placeholder="Digite o seu CPF" required min={11} />
+      <input type="text" name="email" id="email" className="py-2 pl-2 border-b border-gray-300" placeholder="foto" />
+      <input type="email" name="email" id="email" className="py-2 pl-2 border-b border-gray-300" placeholder="Email" />
+
+      <input type="password" name="senha" id="senha" className="py-2 pl-2 border-b border-gray-300" placeholder="Senha" />
+      <input type="password" name="confirmar_senha" id="confirmar_senha" className="py-2 pl-2 border-b border-gray-300" placeholder="Confirmar Senha" />
+
+      <button type='submit' className="py-2 mt-5 text-lg font-semibold text-white bg-teal-600 sm:col-span-2 sm:w-1/2 hover:bg-teal-700">Cadastrar</button>
+    </form>
+  </div>
+
+</div>
     </>
   )
 }
 
 export default Cadastro
+
+
+
+
