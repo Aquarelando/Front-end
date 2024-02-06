@@ -1,0 +1,19 @@
+
+ 
+ .caixa {
+    display:flex;
+  }
+
+  .info{
+    margin-left: 80px;
+    
+  }
+
+  .info h1 {
+    font-size: x-large;
+  }
+
+  .info p {
+    font-size: large;
+  }
+
