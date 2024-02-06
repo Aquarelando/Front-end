@@ -3,7 +3,7 @@
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import './Login.css';
 
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
@@ -42,10 +42,11 @@ function Login() {
     handleLogin(usuarioLogin)
   }
 
- 
+
   return (
+    
     <>
-      <div className="h-screen m-auto 2xl:container bg-rosalogin">
+      <div className="w-full h-screen bg-rosalogin">
         <div id='bgform' className="relative h-full ml-auto lg:w-6/12">
           <div className="px-6 py-12 m-auto sm:p-20 xl:w-10/12" >
             <div className='grid gap-6 mt-12 sm:grid-col-2 '>
@@ -104,8 +105,8 @@ function Login() {
           </div>
         </div>
         <div>
-          <div hidden className="fixed w-7/12 inset-24 lg:block">
-            <img src={LogoAquarelando} alt="Logo-Aquarelando" className='absolute text-sm left-6 bottom-2' />
+          <div hidden className="flex justify-center uniq:hidden">
+            <img src={LogoAquarelando} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw]' />
           </div>
         </div>
       </div>
