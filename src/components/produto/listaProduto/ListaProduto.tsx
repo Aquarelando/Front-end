@@ -16,24 +16,15 @@ function ListaProdutos() {
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
-  useEffect(() => {
-    if (token !== '') {
-      alert('Você precisa estar logado');
-      navigate('/');
-    }
-  }, [token]);
-
   async function buscarProdutos() {
     try {
       await buscar('/produtos/todos', setProdutos, {
         headers: {
-          Authorization: token,
         },
       });
     } catch (error: any) {
-      if (error.toString().includes('403')) {
-        alert('O token expirou, favor logar novamente')
-        handleLogout()
+    {
+        alert('Erro ao buscaro Produtos')
       }
     }
   }
