@@ -12,26 +12,26 @@ function Home() {
   return (
     <>
 
-      <div className="flex justify-center bg-gradient-to-b from-[#439da6] to-[#26668b] pb-20">
+      <div className="home flex justify-center bg-gradient-to-b from-[#439da6] to-[#26668b] pb-20">
         <div className='container grid grid-cols-2 text-white'>
 
           <div className="container ml-60">
 
           <img src={homeLogo} alt="logo aquarelando" className="mt-20" />
-            <div className='caixa'>
-              <div className="info">
-                <h1>1K+</h1>
-                <p>Reviews</p>
+            <div className='caixa text-2xl'>
+              <div className=' pr-[80px]'>
+                <h1 className='text-5xl font-semibold'>1K+</h1>
+                <p className='text-base'>Reviews</p>
               </div>
 
-              <div className="info">
-                <h1>5K+</h1>
-                <p>Vendas</p>
+              <div className=' pr-[80px]'>
+                <h1 className='text-5xl font-semibold'>5K+</h1>
+                <p className='text-base'>Vendas</p>
               </div>
 
-              <div className="info">
-                <h1>150K+</h1>
-                <p>Crianças ajudadas</p>
+              <div>
+                <h1 className='text-5xl font-semibold'>150K+</h1>
+                <p className='text-base'>Crianças ajudadas</p>
               </div>
             </div>
             </div>
