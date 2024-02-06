@@ -8,7 +8,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
 //Imagens //
-import LogoAquarelando from '../../assets/Logo.png';
+import LogoAquarelando2 from '../../assets/Logo2.png';
 import imgFacebook from '../../assets/Facebook_f_logo_(2019).png';
 import LogoGoogle from '../../assets/google.svg';
 
@@ -106,7 +106,7 @@ function Login() {
         </div>
         <div>
           <div hidden className="flex justify-center uniq:hidden">
-            <img src={LogoAquarelando} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw]' />
+            <img src={LogoAquarelando2} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw]' />
           </div>
         </div>
       </div>

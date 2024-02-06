@@ -1,0 +1,27 @@
+/*Cor dos botões de Navegação*/
+:root {
+    --swiper-theme-color: #ffffff;
+  }
+  
+  /*Tamanho e o posicionamento do Carrossel
+  .swiper2 {
+    height: 25rem;
+    width: 750px;
+    margin: 50px;
+    margin-left: 0;
+    border-radius: 30px 30px 0 0;
+  }*/
+  
+  /*Estiliza a imagem do slide*/
+  .swiper-slide-img2 {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 3px solid #fd98b4;
+  }
+
+  body{
+    background-color: #F6F2F0;
+  }

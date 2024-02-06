@@ -17,23 +17,23 @@ function Home() {
 
           <div className="container space-x-6 w-full">
           
-          <img src={homeLogo} alt="logo aquarelando" className="mt-20" />
-            <div className='caixa'>
-              <div className="info">
-                <h1>1K+</h1>
-                <p>Reviews</p>
-              </div>
+            <img src={homeLogo} alt="logo aquarelando" className="mt-20" />
+              <div className='caixa'>
+                <div className="info">
+                  <h1>1K+</h1>
+                  <p>Reviews</p>
+                </div>
 
-              <div className="info">
-                <h1>5K+</h1>
-                <p>Vendas</p>
+                <div className="info">
+                  <h1>5K+</h1>
+                  <p>Vendas</p>
+                </div>
+                
+                <div className="info">
+                  <h1>150K+</h1>
+                  <p>Crianças ajudadas</p>
+                </div>
               </div>
-              
-              <div className="info">
-                <h1>150K+</h1>
-                <p>Crianças ajudadas</p>
-              </div>
-            </div>
 
           </div>
 
