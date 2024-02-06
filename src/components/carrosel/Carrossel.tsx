@@ -5,6 +5,10 @@ import bebe from '../../assets/bebe.png'
 import bebe2 from '../../assets/bebe2.png'
 import estudante from '../../assets/estudante.png'
 import frete from '../../assets/frete.png'
+import fgratis from '../../assets/teste1.png'
+import mochila from '../../assets/teste2.png'
+import creche from '../../assets/teste3.png'
+import livros from '../../assets/teste4.png'
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -43,7 +47,7 @@ function Carrossel() {
                     <SwiperSlide>
                         <Link to='/produtos'>
                             <img className="swiper-slide-img"
-                                src='https://i.imgur.com/zBGxsoy.png'
+                                src={fgratis}
                                 alt="Produto 1"
 
                             />
@@ -52,7 +56,7 @@ function Carrossel() {
                     <SwiperSlide>
                         <Link to='/produtos'>
                             <img className="swiper-slide-img"
-                                src='https://i.imgur.com/phixW3O.png '
+                                src= {mochila}
                                 alt="Produto 2"
 
                             />
@@ -61,7 +65,7 @@ function Carrossel() {
                     <SwiperSlide>
                         <Link to='/produtos'>
                             <img className="swiper-slide-img"
-                                src='https://i.imgur.com/rZAj6T1.png'
+                                src= {creche}
                                 alt="Produto 3"
 
                             />
@@ -70,7 +74,7 @@ function Carrossel() {
                     <SwiperSlide>
                         <Link to='/produtos'>
                             <img className="swiper-slide-img"
-                                src='https://i.imgur.com/t21Deux.png'
+                                src={livros}
                                 alt="Produto 4"
 
 
