@@ -11,40 +11,34 @@ import CardProdutoUsuario from '../cardProdutoUsuario/CardProdutoUsuario';
 
 
 function ListaProdutos() {
-  const [produtos, setProdutos] = useState<Produtos[]>([]);
+const [produtos, setProdutos] = useState<Produtos[]>([]);
 
-  let navigate = useNavigate();
+let navigate = useNavigate();
 
-  const { usuario, handleLogout } = useContext(AuthContext);
-  const token = usuario.token;
+const { usuario, handleLogout } = useContext(AuthContext);
+const token = usuario.token;
 
-  useEffect(() => {
-    if (token !== '') {
-      alert('Você precisa estar logado');
-      navigate('/');
-    }
-  }, [token]);
 
-  async function buscarProdutos() {
+async function buscarProdutos() {
     try {
-      await buscar('/produtos/todos', setProdutos, {
-        headers: {
-          Authorization: token,
-        },
-      });
-    } catch (error: any) {
-      if (error.toString().includes('403')) {
-        alert('O token expirou, favor logar novamente')
-        handleLogout()
-      }
+        await buscar('/produtos/todos', setProdutos, {
+            headers: {
+            Authorization: token,
+            },
+        });
+        } catch (error: any) {
+        if (error.toString().includes('403')) {
+            alert('O token expirou, favor logar novamente')
+            handleLogout()
+        }
+        }
     }
-  }
 
-  useEffect(() => {
-    buscarProdutos();
-  }, [produtos.length]);
-  return (
-   <>
+    useEffect(() => {
+        buscarProdutos();
+    }, [produtos.length]);
+    return (
+    <>
 
 
 <div className="bg-white">
