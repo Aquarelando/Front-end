@@ -86,15 +86,22 @@ function Cadastro() {
 
     <form className="grid gap-10 sm:grid-cols-2">
       
-      <input type="text" name="primeiroNome" id="primeiroNome" className="py-2 pl-2 border-b border-gray-300" placeholder="Nome" />
+      <input type="text" name="nome" id="nome" className="py-2 pl-2 border-b border-gray-300" placeholder="Nome" required value={usuario.nome} 
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}/>
       <input type="text" name="sobrenome" id="sobrenome" className="py-2 pl-2 border-b border-gray-300" placeholder="Sobrenome" />
-      <input type="date" name="data_nascimento" id="data_nascimento" className="py-2 pl-2 border-b border-gray-300" placeholder="Data de Nascimento" />
-      <input type="text" name="cpf" id="cpf" className="py-2 pl-2 border-b border-gray-300" placeholder="Digite o seu CPF" required min={11} />
-      <input type="text" name="email" id="email" className="py-2 pl-2 border-b border-gray-300" placeholder="foto" />
-      <input type="email" name="email" id="email" className="py-2 pl-2 border-b border-gray-300" placeholder="Email" />
+      <input type="date" name="data_nascimento" id="data_nascimento" className="py-2 pl-2 border-b border-gray-300" placeholder="Data de Nascimento" required value={usuario.data_nascimento} 
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}/>
+      <input type="text" name="cpf" id="cpf" className="py-2 pl-2 border-b border-gray-300" placeholder="Digite seu CPF(Apenas numeros)" required minLength={11} maxLength={11} value={usuario.cpf} 
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}/>
+      <input type="text" name="foto" id="foto" className="py-2 pl-2 border-b border-gray-300" placeholder="foto" value={usuario.foto} 
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}/>
+      <input type="email" name="email" id="email" className="py-2 pl-2 border-b border-gray-300" placeholder="Email" required value={usuario.email} 
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}/>
 
-      <input type="password" name="senha" id="senha" className="py-2 pl-2 border-b border-gray-300" placeholder="Senha" />
-      <input type="password" name="confirmar_senha" id="confirmar_senha" className="py-2 pl-2 border-b border-gray-300" placeholder="Confirmar Senha" />
+      <input type="password" name="senha" id="senha" className="py-2 pl-2 border-b border-gray-300" placeholder="Senha"  required minLength={8} value={usuario.senha} 
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}/>
+      <input type="password" name="{confirmaSenha} " id="{confirmaSenha} " className="py-2 pl-2 border-b border-gray-300" placeholder="Confirmar Senha"  required minLength={8} value={confirmaSenha} 
+              onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}/>
 
       <button type='submit' className="py-2 mt-5 text-lg font-semibold text-white bg-teal-600 sm:col-span-2 sm:w-1/2 hover:bg-teal-700">Cadastrar</button>
     </form>
