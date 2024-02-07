@@ -7,12 +7,14 @@ import { useContext, useState } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
 import FooterListaTitulo from './FooterListaTitulo'
 import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
 
 function Footer(){
   const { usuario, handleLogout } = useContext(AuthContext)
   const [emailInfo, setEmailInfo] = useState("");
   const [inscreva, setinscreva] = useState(false);
   const [errMsg, setErrMsg] = useState("");
+
 
   let footerComponent
 
@@ -123,7 +125,7 @@ function Footer(){
               Detalhes da conta
             </li>
             <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
-              Pagamento
+              <Link to="/seguranca">Segurança</Link>
             </li>
           </ul>
         </div>
