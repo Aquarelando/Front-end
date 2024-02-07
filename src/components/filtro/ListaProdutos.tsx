@@ -3,14 +3,14 @@ import { BiFilter } from "react-icons/bi";
 import { useContext, useEffect, useState } from 'react';
 import { Dna } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../../contexts/AuthContext';
-import { buscar } from '../../../services/Services';
-import CardProduto from '../cardProduto/CardProduto';
-import Produtos from '../../../models/Produtos';
-import CardProdutoUsuario from '../cardProdutoUsuario/CardProdutoUsuario';
-import CardFiltro from "../../filtro/CardFiltro";
-import dropDown from "../../openMenu/DropDown";
+import { AuthContext } from "../../contexts/AuthContext";
 
+import { buscar } from '../../services/Services';
+import Produtos from '../../models/Produtos';
+import CardFiltro from "../filtro/CardFiltro";
+import CardProdutoUsuario from "../produto/cardProdutoUsuario/CardProdutoUsuario";
+import CardProduto from "../produto/cardProduto/CardProduto";
+import dropDown from "../openMenu/DropDown";
 
 
 function ListaProdutos() {
@@ -86,7 +86,7 @@ const filtrarProdutos = produtos.filter(produto => {
 const filteredProducts = filtrarProdutos.length > 0 ? filtrarProdutos : produtos;
 
 return (
-    <div className="container pt-10 mx-auto" onClick={dropDown}>
+    <div className="container pt-10 mx-auto" onClick={() => dropDown()} >
         <div className="p-3 text-3xl text-center text-white bg-[#439DA6]">Produtos</div>
         <div className="flex items-center justify-between px-2 py-3 text-white">
 
@@ -103,10 +103,10 @@ return (
                     </svg>
                 </button>
                 {/* filtro */}
-                <div id="submenu" className="absolute right-0 mt-2 origin-top-right bg-white rounded-md shadow-lg w-[12rem] ring-1 ring-black ring-opacity-5 focus:outline-none opacity-0 invisible transition-opacity duration-300 ease-in-out group-hover:opacity-100 group-hover:visible"
+                <div  className="absolute right-0 mt-2 origin-top-right bg-white rounded-md shadow-lg w-[12rem] ring-1 ring-black ring-opacity-5 focus:outline-none opacity-0 invisible transition-opacity duration-300 ease-in-out group-hover:opacity-100 group-hover:visible"
                     role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                    <div id="arrow" className="py-1" role="none">
-                        <CardFiltro
+                    <div  className="py-1" role="none">
+                        <CardFiltro 
                             nome="Mochila"
                             checked={selected.find(item => item.nome === 'Mochila')?.checked}
                             onChange={handleCheckboxChange} />
