@@ -5,6 +5,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import Categoria from '../../../models/Categoria';
 import { buscar } from '../../../services/Services';
 import CardCategorias from '../cardCategoria/CardCategoria';
+import { toastAlerta } from '../../../utils/ToastAlerta';
 
 function ListaCategoria() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -21,7 +22,7 @@ function ListaCategoria() {
       });
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        alert('O token expirou, favor logar novamente')
+        toastAlerta('O token expirou, favor logar novamente', 'info')
         handleLogout()
       }
     }
@@ -29,7 +30,7 @@ function ListaCategoria() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      toastAlerta('Você precisa estar logado', 'info');
       navigate('/login');
     }
   }, [token]);

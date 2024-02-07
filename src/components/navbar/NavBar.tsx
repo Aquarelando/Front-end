@@ -5,6 +5,7 @@ import ShoppingCart   from '../../assets/carrinho.png';
 import IconPerfil   from '../../assets/perfil.png';
 import './NavBar.css'; 
 import paintLogo from '../../assets/paintLogo.png';
+import { toastAlerta } from '../../utils/ToastAlerta';
 
 function Navbar() {
     let navigate = useNavigate();
@@ -13,7 +14,7 @@ function Navbar() {
 
     function logout() {
     handleLogout();
-    alert('Usuário deslogado com sucesso');
+    toastAlerta('Usuário deslogado com sucesso', 'sucesso');
     navigate('/login');
     }
 

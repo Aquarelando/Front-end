@@ -30,3 +30,21 @@
     font-size: large;
   }
 
+  .text-5xl {
+    font-size: 3.75rem; 
+    font-weight: 600; 
+  }
+  
+  .text-shadow {
+    text-shadow: 3px 3px 3px rgba(93, 95, 113, 0.5);
+  }
+  
+  .button-container:hover .button-content {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .button-container:hover .arrow-img {
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out;
+  }

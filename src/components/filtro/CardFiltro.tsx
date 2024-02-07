@@ -9,7 +9,7 @@ function CardFiltro({ nome, checked, onChange }: CardFiltroProps) {
 
     return (
         <>
-            <li id="submenu" className="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600 ">
+            <li id="submenu" className="list-none w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600 ">
                 <div className="flex items-center ps-3">
                     <input
                         id={nome}
