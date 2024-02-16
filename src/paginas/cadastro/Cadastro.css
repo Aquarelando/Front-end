@@ -1,8 +1,3 @@
-.fundoCadastro {
-    background-image: url(../../assets/download.jpg);
-      background-repeat: no-repeat;
-      width: 100%;
-      min-height: 100vh;
-      background-size: cover;
-      background-position: center;
+#bgform{
+    background: linear-gradient(180deg, #48acb6, #004b71);
   }

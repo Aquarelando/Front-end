@@ -4,6 +4,7 @@ import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Services'
 import './Cadastro.css'
 import { toastAlerta } from '../../utils/ToastAlerta'
+import LogoAquarelando2 from '../../assets/Logo2.png';
 
 function Cadastro() {
 
@@ -14,7 +15,7 @@ function Cadastro() {
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: '',
-    tipo:'user',
+    tipo:'dev',
     data_nascimento: '',
     cpf: '',
     foto: '',
@@ -79,26 +80,27 @@ function Cadastro() {
 
   return (
     <>
-<div className="relative flex flex-col items-center justify-center min-h-screen py-6 overflow-hidden bg-creme bg-gray-50 sm:py-12">
+<div className="w-full h-screen bg-rosalogin">
   
-  <div className="p-10 bg-white shadow-lg">
+  <div id='bgform' className="p-24 relative h-full ml-auto lg:w-6/12 shadow-lg">
     
-    <h3 className="mb-10 text-3xl font-bold">Registre-se</h3>
+    <h3 className="mb-8 text-2xl font-bold text-white">Cadastro</h3>
 
-    <form className="grid gap-10 sm:grid-cols-2" onSubmit={cadastrarNovoUsuario}>
+    <form onSubmit={cadastrarNovoUsuario}>
+        <div className="grid gap-3 sm:grid-cols-2">
           <div className="flex flex-col w-full">
             <label htmlFor="nome" className='text-white'>Nome</label>
             <input
               type="text"
               id="nome"
               name="nome"
-              placeholder="Nome"
-              className="border-2 border-slate-700 rounded p-2"
+              placeholder="Nome completo"
               value={usuario.nome} 
+              className="w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
-          <div className="flex flex-col w-full">
+          {/* <div className="flex flex-col w-full">
             <label htmlFor="tipo" className='text-white'>Tipo</label>
             <input
               type="text"
@@ -109,7 +111,7 @@ function Cadastro() {
               value={usuario.tipo} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
-          </div>
+          </div> */}
           <div className="flex flex-col w-full">
             <label htmlFor="data_nascimento" className='text-white'>Data de Nascimento</label>
             <input
@@ -117,7 +119,7 @@ function Cadastro() {
               id="data_nascimento"
               name="data_nascimento"
               placeholder="Data de Nascimento"
-              className="border-2 border-slate-700 rounded p-2"
+              className="text-gray-400 w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               value={usuario.data_nascimento} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -128,8 +130,8 @@ function Cadastro() {
               type="text"
               id="cpf"
               name="cpf"
-              placeholder="CPF(Somente em numeros"
-              className="border-2 border-slate-700 rounded p-2"
+              placeholder="CPF(Somente em numeros)"
+              className="w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               value={usuario.cpf} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -140,12 +142,13 @@ function Cadastro() {
               type="text"
               id="foto"
               name="foto"
-              placeholder="Foto"
-              className="border-2 border-slate-700 rounded p-2"
+              placeholder="URL da Foto"
+              className="w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               value={usuario.foto} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
+        </div>
           <div className="flex flex-col w-full">
             <label htmlFor="email" className='text-white'>Email</label>
             <input
@@ -153,19 +156,20 @@ function Cadastro() {
               id="email"
               name="email"
               placeholder="Email"
-              className="border-2 border-slate-700 rounded p-2"
+              className="w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               value={usuario.email} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
+        <div className="grid gap-3 sm:grid-cols-2">
           <div className="flex flex-col w-full">
             <label htmlFor="senha" className='text-white'>Senha</label>
             <input
               type="password"
               id="senha"
               name="senha"
-              placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              placeholder="Senha(minimo 8 caracteres)"
+              className="w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               value={usuario.senha} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -176,21 +180,25 @@ function Cadastro() {
               type="password"
               id="confirmarSenha"
               name="confirmarSenha"
-              placeholder="Confirmar Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              placeholder="Confirme sua Senha"
+              className="w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               value={confirmaSenha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
             />
           </div>
-          <div className="flex justify-around w-full gap-8">
-            <button className='rounded text-white bg-[#000080] hover:bg-[#483D8B] w-1/2 py-2' onClick={back}>
-              Cancelar
+        </div>
+          <div className="mt-10 flex justify-around w-full gap-8">
+            <button className='rounded-2xl text-white bg-[#004b71] hover:bg-[#483D8B] w-[30%] py-4' onClick={back}>
+              Voltar
             </button>
-            <button className='rounded bg-[#000000] hover:bg-[#696969] text-white w-1/2 py-2' type='submit'>
+            <button className='rounded-2xl bg-buttonlogin hover:bg-rosalogin focus:bg-sky-600 active:bg-sky-800 text-white w-[30%] py-4' type='submit'>
               Cadastrar
             </button>
           </div>
     </form>
+  </div>
+  <div hidden className="flex justify-center uniq:hidden">
+    <img src={LogoAquarelando2} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw]' />
   </div>
 
 </div>
