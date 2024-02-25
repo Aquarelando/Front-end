@@ -26,7 +26,7 @@ function Footer(){
   
     const handleSubscription = () => {
       if (emailInfo === "") {
-        setErrMsg("Forneca um email !");
+        setErrMsg("Forneça um email !");
       } else if (!emailValidation(emailInfo)) {
         setErrMsg("Por favor entre com um email valido!");
       } else {

@@ -2,9 +2,9 @@ import React from 'react'
 
 function Pagamentos() {
   return (
-    <body className="font-sans bg-[#439DA6] pt-[5vh]">
+    <body className="font-sans bg-[#439DA6] flex justify-space-between">
     <div className="container py-8 mx-auto text-center">
-        <div className="flex justify-between ">
+        <div className="flex justify-space-between ">
             <div className="w-1/2 p-6 bg-white rounded-lg shadow-lg">
                 <h2 className="pt-4 mb-4 text-xl font-bold text-gray-800">Segurança de Pagamento</h2>
                 <p className="mb-4 text-gray-700">Estamos comprometidos em garantir a segurança das suas transações

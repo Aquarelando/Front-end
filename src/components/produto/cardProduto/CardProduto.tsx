@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import Produto from '../../../models/Produtos'
+import { MdDelete } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
 
 
 interface CardProdutoProps {
@@ -10,31 +12,45 @@ function CardProduto({ produto }: CardProdutoProps) {
 
 
   return (
-    <div className='border-slate-900 border flex flex-col rounded overflow-hidden justify-between'>
-      <div>
-        <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
-        </div>
-        <div className='p-4 '>
-          <h4 className='text-lg font-semibold uppercase'>{produto.nome}</h4>
-          <img src={produto.foto} alt={`Foto de perfil de ${produto.nome}`} />
-          <p>{produto.descricao}</p>
-          <p>Data: {new Intl.DateTimeFormat(undefined, {
+    <>
+   <div className="duration-500 bg-white shadow-md w-72 rounded-xl hover:scale-105 hover:shadow-xl">
+   <div className='p-3 text-center'>
+            <p>{produto.seloInmetro ? 'Selo Inmetro ✅': 'Selo Inmetro ❌'}</p>
+            </div>
+        <a href="#">
+          <img src={produto.foto} alt="Product" className="object-cover h-80 w-72 rounded-t-xl" />
+          <div className="px-4 py-3 w-72">
+            <span className="mr-3 text-xs text-gray-400 uppercase"></span>
+            <p className="block text-lg font-bold text-black capitalize truncate">{produto.nome}</p>
+            <div>
+                {produto.descricao}
+            </div>
+            <div className='flex gap-3'>
+            <p className='pt-3'>Data: {new Intl.DateTimeFormat(undefined, {
                     dateStyle: 'short',
                   }).format(new Date(produto.dataValidade))}</p>
-          <p>quantidade: {produto.quantidade}</p> 
-          <p>{produto.seloInmetro ? 'Selo Inmetro✅': 'Selo Inmetro❌'}</p>
-          <p>R$: {produto.preco}</p>
-        </div>
+                  <p className='pt-3'>Quantidade: {produto.quantidade}</p> 
+            </div>
+            <div className="flex ">
+              <p className="my-3 text-lg pl-[5rem] font-semibold text-black cursor-auto"> 
+              {Intl.NumberFormat('pt-BR', {
+                            style: 'currency',
+                            currency: 'BRL'}).format(produto.preco)}
+              </p>
+              
+            </div>
+                <div className='flex justify-around  '>
+                <Link to={`/editarProduto/${produto.id}`} className='rounded-full bg-[#FD98B4] hover:bg-[#439DA6] p-4 text-white'>
+                <FaEdit />
+               </Link>
+                <Link to={`/deletarProduto/${produto.id}`} className='rounded-full bg-[#FD98B4] hover:bg-[#439DA6]  p-4 text-white'>
+                 <i className=''><MdDelete/></i>
+               </Link>
+                </div>
+          </div>
+        </a>
       </div>
-      <div className="flex">
-      <Link to={`/editarProduto/${produto.id}`} className='w-full text-white bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2'>
-          <button>Editar</button>
-        </Link>
-        <Link to={`/deletarProduto/${produto.id}`} className='text-white bg-red-400 hover:bg-red-700 w-full flex items-center justify-center'>
-          <button>Deletar</button>
-        </Link>
-      </div>
-    </div>
+    </>
   )
 }
 

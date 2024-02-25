@@ -52,10 +52,7 @@ function Home() {
 
 
         <div>
-
-            <Carrossel />
-
-            <ListaProduto />
+            <h1>Aqui ficara nosso Storytelling</h1>
         </div>
 
         </>

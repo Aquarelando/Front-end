@@ -14,11 +14,7 @@ body {
     border-bottom: 1px solid grey;
 }
 
-.flex {
-    display: flex;
-    gap: 5px;
-    align-items: center; 
-}
+
 
 .logo {
     max-width: 20px;

@@ -67,7 +67,7 @@ function Navbar() {
                     </div>
                     <div className='flex gap-5 mr-12'>      
                         <Link to='/login'><img src={ShoppingCart} alt="Carrinho" className="mr-2 carrinho mt-0"/></Link>
-                        <Link to='/login' className='rounded-full bg-[#fd98b4] text-white py-1 px-4'>Login/Cadastro</Link>                         
+                        <Link to='login' className='rounded-full bg-[#fd98b4] text-white py-1 px-4'>Login/Cadastro</Link>                         
                     </div>
                 <hr />
                 </div>
