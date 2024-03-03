@@ -1,10 +1,9 @@
 import homeLogo from '../../assets/Logo.png'
 import { Link } from 'react-router-dom';
-import Carrossel from '../../components/carrosel/Carrossel';
-import ListaProduto from '../../components/produto/listaProduto/ListaProduto';
 import seta from '../../assets/dfxKC3k.png';
 import './Home.css'
 import bemvindo from '../../assets/bemvindo.png'
+import StoryTelling from '../storytelling/StoryTelling';
 
 function Home() {
 
@@ -18,7 +17,7 @@ function Home() {
 
             <img src={homeLogo} alt="logo aquarelando" className="mt-20" />
                 <div className='caixa text-2xl'>
-                <div className=' pr-[80px]'>
+                <div className=' pr-[80px] mb-20'>
                 <h1 className='text-5xl font-semibold text-shadow'>1K+</h1>
                     <p className='text-base'>Reviews</p>
                 </div>
@@ -52,7 +51,7 @@ function Home() {
 
 
         <div>
-            <h1>Aqui ficara nosso Storytelling</h1>
+            <StoryTelling/>
         </div>
 
         </>
