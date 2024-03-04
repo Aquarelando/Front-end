@@ -8,10 +8,19 @@ import Produtos from "../../../models/Produtos";
 import { buscar } from "../../../services/Services";
 import CardFiltro from "../../filtro/CardFiltro";
 import CardProduto from "../cardProduto/CardProduto";
+import CardCategoria from "../../../models/Categoria"
 import CardProdutoUsuario from "../cardProdutoUsuario/CardProdutoUsuario";
 import Carrossel from "../../carrosel/Carrossel";
 
+
+const getStatusClass = (disponivel: boolean): string => {
+  return disponivel ? 'text-green-500' : 'text-red-500';
+};
+
 function ListaProdutos() {
+
+  let ListaProdutosComponent;
+
   const [produtos, setProdutos] = useState<Produtos[]>([]);
   const [search, setSearch] = useState("");
 
@@ -72,67 +81,130 @@ function ListaProdutos() {
   const filteredProducts =
     filtrarProdutos.length > 0 ? filtrarProdutos : produtos;
 
-  return (
-    <>
-      {/* Carrossel */}
-      <div>
-        <Carrossel />
-      </div>
-      {/* Pagina Produtos */}
-      <div className="flex justify-center mt-3 p-3 text-white font-light text-3xl font-bold bg-[#439DA6]">
-        <h1>Produtos</h1>
-      </div>
-      <div className="flex gap-4 justify-space-evenly">
-        <div>
-          <div className="bg-[#439DA6] text-white p-2">
-            <h1>Categorias</h1>
-            <CardFiltro
-              nome="Mochila"
-              checked={
-                selected.find((item) => item.nome === "Mochila")?.checked
-              }
-              onChange={handleCheckboxChange}
-            />
+    // LISTA PARA ADMIN
+    if (usuario.tipo === "dev") {
+      ListaProdutosComponent = (
+        <>
+          <div className="py-20 px-20">
+            <div className="bg-white rounded-t-lg">
+              {/* Pagina Produtos */}
+              <div className="flex mt-3 p-5 text-[#5C5C5C] text-3xl font-semibold" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '32px' }}>
+                <h1>Produtos</h1>
+              </div>
 
-            <CardFiltro
-              nome="Estojo"
-              checked={selected.find((item) => item.nome === "Estojo")?.checked}
-              onChange={handleCheckboxChange}
-            />
-
-            <CardFiltro
-              nome="Caderno"
-              checked={
-                selected.find((item) => item.nome === "Caderno")?.checked
-              }
-              onChange={handleCheckboxChange}
-            />
-
-            <CardFiltro
-              nome="Livro"
-              checked={selected.find((item) => item.nome === "Livro")?.checked}
-              onChange={handleCheckboxChange}
-            />
-
-            <CardFiltro
-              nome="Material"
-              checked={
-                selected.find((item) => item.nome === "Material")?.checked
-              }
-              onChange={handleCheckboxChange}
-            />
+              <div className="overflow-x-auto">
+              <table className="min-w-full bg-white border border-gray-300 rounded-md overflow-hidden">
+                <thead className="bg-[#6753F3] text-white">
+                  <tr>
+                    <th className="py-4 px-4 border-b">Fotos</th>
+                    <th className="py-4 px-4 border-b">Nome</th>
+                    <th className="py-4 px-4 border-b">Data</th>
+                    <th className="py-4 px-4 border-b">Categoria</th>
+                    <th className="py-4 px-4 border-b">Preço</th>
+                    <th className="py-4 px-4 border-b">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredProducts.map((produto) => (
+                    <tr key={produto.id}>
+                      <td className="py-2 px-4 border-b">
+                        <img src={produto.foto} alt="Product" className="w-12 rounded-full" />
+                      </td>
+                      <td className="py-2 px-4 border-b">{produto.nome}</td>
+                      <td className="py-2 px-4 border-b">
+                        {new Intl.DateTimeFormat('pt-BR', {
+                          day: '2-digit',
+                          month: 'short',
+                          year: 'numeric',
+                        }).format(new Date(produto.dataValidade))}
+                      </td>
+                      <td className="py-2 px-4 border-b">{produto.categoria.nome}</td>
+                      <td className="py-2 px-4 border-b">
+                        {Intl.NumberFormat('pt-BR', {
+                          style: 'currency',
+                          currency: 'BRL',
+                        }).format(produto.preco)}
+                      </td>
+                      <td className={`py-2 px-4 border-b ${getStatusClass(produto.categoria.disponivel)}`}>
+                        {produto.categoria.disponivel ? 'Disponível' : 'Indisponível'}
+                      </td>                    
+                      </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-        <div className="flex flex-wrap gap-3 p-3">
-          {usuario.tipo === "dev"
-            ? filteredProducts.map((produto) => (
-                <CardProduto key={produto.id} produto={produto} />
-              ))
-            : filteredProducts.map((produto) => (
-                <CardProdutoUsuario key={produto.id} produto={produto} />
-              ))}
-        </div>
-      </div>
+      </>
+      );
+
+    //LISTA PARA USUÁRIOS
+    } else {
+      ListaProdutosComponent = (
+        <>
+          {/* Carrossel */}
+          <div>
+            <Carrossel />
+          </div>
+          {/* Pagina Produtos */}
+          <div className="flex justify-center mt-3 p-3 text-white font-light text-3xl font-bold bg-[#439DA6]">
+            <h1>Produtos</h1>
+          </div>
+          <div className="flex gap-4 justify-space-evenly">
+            <div>
+              <div className="bg-[#439DA6] text-white p-2">
+                <h1>Categorias</h1>
+                <CardFiltro
+                  nome="Mochila"
+                  checked={
+                    selected.find((item) => item.nome === "Mochila")?.checked
+                  }
+                  onChange={handleCheckboxChange}
+                />
+    
+                <CardFiltro
+                  nome="Estojo"
+                  checked={selected.find((item) => item.nome === "Estojo")?.checked}
+                  onChange={handleCheckboxChange}
+                />
+    
+                <CardFiltro
+                  nome="Caderno"
+                  checked={
+                    selected.find((item) => item.nome === "Caderno")?.checked
+                  }
+                  onChange={handleCheckboxChange}
+                />
+    
+                <CardFiltro
+                  nome="Livro"
+                  checked={selected.find((item) => item.nome === "Livro")?.checked}
+                  onChange={handleCheckboxChange}
+                />
+    
+                <CardFiltro
+                  nome="Material"
+                  checked={
+                    selected.find((item) => item.nome === "Material")?.checked
+                  }
+                  onChange={handleCheckboxChange}
+                />
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-3 p-3">
+              {filteredProducts.map((produto) => (
+                    <CardProdutoUsuario key={produto.id} produto={produto} />
+                  ))}
+            </div>
+          </div>
+        </>
+      );
+    }
+
+
+  return (
+    <>
+    {ListaProdutosComponent}
     </>
   );
 }

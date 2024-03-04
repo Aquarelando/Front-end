@@ -14,7 +14,7 @@ function StoryTelling() {
                 </br> nossa causa. Se você deseja fazer a diferença, clique aqui<br>
                 </br> e contribua com qualquer valor. Sua generosidade faz<br>
                 </br> com que nossos esforços se tornem realidade. Agradecemos profundamente pelo seu apoio.</p>
-                <Link to='' className='rounded-full bg-[#439da6] text-white py-1 px-8 text-xl flex-row items-center'>DOE AQUI</Link>
+                <Link to='/doacao' className='rounded-full bg-[#439da6] text-white py-1 px-8 text-xl flex-row items-center'>DOE AQUI</Link>
             </div>
             <div className="ml-8">
                 <Link to='' className='rounded-3xl bg-[#fd98b4] text-white py-6 px-[28%] text-xl'>GALERIA DE FOTOS</Link>

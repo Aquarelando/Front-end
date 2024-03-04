@@ -114,7 +114,8 @@ function FormularioCategoria() {
   }, [token]);
   console.log(categoria)
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto">
+    <div className="w-[50rem] container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10
+     bg-gradient-to-b from-[#439da6] to-[#26668b] border-4 border-[#fa769c] border-x-[#FD98B4]">
       <h1 className="text-4xl text-center my-8">
         {id === undefined ? 'Cadastre uma nova categoria' : 'Editar categoria'}
       </h1>
@@ -142,17 +143,19 @@ function FormularioCategoria() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
-        <div className="flex flex-col w-full">
+        <div className="flex items-center justify-center gap-20 mb-4">
           <label htmlFor="ativo">
+
             <input
                 type="radio"
                 id="ativo"
                 name="disponivel"
-                className="border-2 border-slate-700 rounded p-2"
+                className="border-2 border-slate-700 rounded"
                 value="true"
                 onChange={handleDisponivel}
             />
-            {' '}Disponivel
+            
+            {' '}Disponivel ✅
             </label>
 
             <label htmlFor="inativo">
@@ -164,11 +167,11 @@ function FormularioCategoria() {
                 value="false"
                 onChange={handleDisponivel}
             />
-            {' '}Indisponivel
+            {' '}Indisponivel ❌
             </label>
         </div>
         <button
-          className="rounded text-slate-100 bg-[#4F4F4F] hover:bg-[#696969] w-1/2 py-2 mx-auto block"
+          className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8"
           type="submit"
         >
           {id === undefined ? 'Cadastrar' : 'Editar'}
