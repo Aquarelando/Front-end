@@ -1,5 +1,6 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import "./Login.css";
+import '../home/Home.css'
 
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -49,12 +50,12 @@ function Login() {
         <div className="w-full">
         <Link
               to="/home"
-              className="font-semibold uppercase flex items-center ml-0 mr-20 logo-container p-5 pl-[3rem] text-white flex "
+              className="font-semibold uppercase flex items-center ml-0 mr-20 logo-container p-5 pl-[3rem] text-white"
             >
               <img  src={paintLogo} alt="Paint logo" className="mr-2 leading-7 logo bg-gradient-to-r from-[#439da6] to-[#26668b] rounded-full" />
               Aquarelando
             </Link>
-          <img src={LogoAquarelando2} alt="Logo-Aquarelando" className="p-[5vh]" />
+          <img src={LogoAquarelando2} alt="Logo-Aquarelando" className="p-[5vh] pulsahome" />
         </div>
         <div id="bgform" className="w-[100%] p-[10%] pt-[10rem] flex flex-col justify-center">
           <div className="flex justify-center gap-2 p-4 rounded-xl bg-blue-50 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">

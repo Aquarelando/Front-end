@@ -6,6 +6,7 @@ import './Cadastro.css'
 import { toastAlerta } from '../../utils/ToastAlerta'
 import LogoAquarelando2 from '../../assets/Logo2.png';
 import paintLogo from '../../assets/paintLogo.png';
+import '../home/Home.css'
 
 
 function Cadastro() {
@@ -17,7 +18,7 @@ function Cadastro() {
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: '',
-    tipo: 'dev',
+    tipo: 'user',
     data_nascimento: '',
     cpf: '',
     foto: '',
@@ -86,7 +87,7 @@ function Cadastro() {
         <div className="">
           <Link
             to="/home"
-            className="font-semibold uppercase flex items-center ml-0 mr-20 logo-container p-5 pl-[3rem] text-white flex "
+            className="font-semibold uppercase flex items-center ml-0 mr-20 logo-container p-5 pl-[3rem] text-white"
           >
             <img src={paintLogo} alt="Paint logo" className="mr-2 leading-7 logo bg-gradient-to-r from-[#439da6] to-[#26668b] rounded-full" />
             Aquarelando
@@ -209,7 +210,7 @@ function Cadastro() {
           </form>
         </div>
         <div hidden className="flex justify-center uniq:hidden">
-          <img src={LogoAquarelando2} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw]' />
+          <img src={LogoAquarelando2} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw] pulsahome' />
         </div>
 
       </div>
@@ -218,7 +219,6 @@ function Cadastro() {
 }
 
 export default Cadastro
-
 
 
 
