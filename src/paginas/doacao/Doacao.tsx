@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Menino from '../../assets/menino na escada.png'; 
 import Menina from '../../assets/menina na escada.png';
+import './Doacao.css'
 
 
 function Doacao() {
@@ -71,7 +72,7 @@ function Doacao() {
                 className="block w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
               />
             </div>
-            {doacaoCompleta && <p className="text-green-600 mb-4">Doação completada com sucesso!</p>}
+            {doacaoCompleta && <p className="text-green-600 mb-4">Doação realizada com sucesso!</p>}
             <div className="flex justify-center">
               <button className='px-4 py-2 text-white bg-[#4088C4] rounded-md hover:bg-[#3478A7] focus:outline-none' type='submit'>
                 Doar
@@ -79,10 +80,10 @@ function Doacao() {
             </div>
           </form>
         </div>
-        <div className="absolute top-[-25px] left-[-120px]">
+        <div className="absolute top-[-25px] left-[-120px] deslizaesquerda">
           <img src={Menino} alt="menino" className="h-auto w-32" /> 
         </div>
-        <div className="absolute top-[-10px] right-[-116px]">
+        <div className="absolute top-[-10px] right-[-116px] deslizadireita">
           <img src={Menina} alt="menina" className="h-auto w-32" /> 
         </div>
       </div>

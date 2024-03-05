@@ -1,0 +1,17 @@
+    .deslizaesquerda {
+        animation: slideIn 2s 1;
+}
+
+@keyframes slideIn {
+    0% {transform: translateX(-50%); }
+    50% {transform: translateX(0); }
+}
+
+    .deslizadireita {
+        animation: slideIn2 2s 1;
+    }
+
+@keyframes slideIn2 {
+    0% {transform: translateX(50%); }
+    50% {transform: translateX(0); }
+}

@@ -3,6 +3,7 @@ import ongs from '../../assets/ongs.png'
 import ongs2 from '../../assets/ongs2.png'
 import aviaopapel from '../../assets/aviaopapel.png'
 import Carrossel3 from "../../components/carrosel/Carrossel3"
+import './StoryTelling.css'
 
 function StoryTelling() {
     return (
@@ -18,11 +19,11 @@ function StoryTelling() {
             </div>
             <div className="ml-8">
                 <Link to='' className='rounded-3xl bg-[#fd98b4] text-white py-6 px-[28%] text-xl'>GALERIA DE FOTOS</Link>
-                <img src={ongs} alt="Imagem das Ongs" className="w-[80%] mt-12"/>
+                <img src={ongs} alt="Imagem das Ongs" className="w-[80%] mt-12  rounded-3xl"/>
             </div>
           </div>
 
-          <img src={aviaopapel} alt="Avião de papel" className="h-20 w-48"/>
+          <img src={aviaopapel} alt="Avião de papel" className="h-20 w-48 pula"/>
 
           <div className="mt-10 mb-10">
             <hr className="ml-36 mr-40 border-t-2 border-gray-400" />
@@ -30,7 +31,7 @@ function StoryTelling() {
 
           <div className="flex pl-40 mt-10 ">
             <div>
-                <img src={ongs2} alt="Crianças recebendo livros" className="w-[90%] h-80"/>
+                <img src={ongs2} alt="Crianças recebendo livros" className="w-[90%] h-80 rounded-3xl"/>
             </div>
             <div className="">
                 <header className="text-xl text-center">Aquarelando Transforma Vendas em Educação:<br></br> Mais de 200 Livros Didáticos Doados para ONGs</header>
