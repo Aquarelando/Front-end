@@ -6,11 +6,10 @@ import Categoria from '../../../models/Categoria';
 import { buscar, atualizar, cadastrar } from '../../../services/Services';
 import { toastAlerta } from '../../../utils/ToastAlerta';
 
-
 function FormularioProduto() {
   let navigate = useNavigate();
 
-  const[valido, setValido] = useState<string>("true")
+  const [valido, setValido] = useState<string>("true")
 
   const { id } = useParams<{ id: string }>();
 
@@ -100,13 +99,13 @@ function FormularioProduto() {
     navigate('/produtos');
   }
 
-  function handleSelo(e: ChangeEvent<HTMLInputElement>){
+  function handleSelo(e: ChangeEvent<HTMLInputElement>) {
     setValido(e.target.value)
     console.log(produto)
-    if(e.target.value == "true"){
-        setProduto({...produto, seloInmetro: true})
-    }else {
-      setProduto({...produto, seloInmetro: false})
+    if (e.target.value == "true") {
+      setProduto({ ...produto, seloInmetro: true })
+    } else {
+      setProduto({ ...produto, seloInmetro: false })
     }
   }
 
@@ -141,7 +140,7 @@ function FormularioProduto() {
         })
 
         toastAlerta('Produto cadastrada com sucesso', 'sucesso')
-        
+
       } catch (error: any) {
         if (error.toString().includes('403')) {
           toastAlerta('O token expirou, favor logar novamente', 'info')
@@ -225,27 +224,27 @@ function FormularioProduto() {
         <div className="flex flex-col w-full">
           <label htmlFor="ativo">
             <input
-                type="radio"
-                id="valido"
-                name="disponivel"
-                className="border-2 border-slate-700 rounded p-2"
-                value="true"
-                onChange={handleSelo}
+              type="radio"
+              id="valido"
+              name="disponivel"
+              className="border-2 border-slate-700 rounded p-2"
+              value="true"
+              onChange={handleSelo}
             />
-            {' '}Possui Selo Inmetro 
-            </label>
+            {' '}Possui Selo Inmetro
+          </label>
 
-            <label htmlFor="inativo">
+          <label htmlFor="inativo">
             <input
-                type="radio"
-                id="invalido"
-                name="disponivel"
-                className="border-2 border-slate-700 rounded p-2"
-                value="false"
-                onChange={handleSelo}
+              type="radio"
+              id="invalido"
+              name="disponivel"
+              className="border-2 border-slate-700 rounded p-2"
+              value="false"
+              onChange={handleSelo}
             />
             {' '}Não Possui Selo Inmetro
-            </label>
+          </label>
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="preco">Preço do Produto</label>
