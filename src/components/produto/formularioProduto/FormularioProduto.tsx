@@ -26,6 +26,7 @@ function FormularioProduto() {
     disponivel: true,
   });
 
+
   const [produto, setProduto] = useState<Produto>({
     id: 0,
     nome: '',
@@ -95,6 +96,9 @@ function FormularioProduto() {
     });
   }
 
+  function back() {
+    navigate('/login')
+  }
 
   function retornar() {
     navigate('/produtos');
@@ -271,10 +275,17 @@ function FormularioProduto() {
             ))}
           </select>
         </div>
-        <button
-          disabled={carregandoCategoria} type='submit' className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8">
-          {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
-        </button>
+        <div className="flex items-center justify-center gap-20 mb-4">
+          <button className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8" onClick={back}>
+            Voltar
+          </button>
+
+          <button
+            disabled={carregandoCategoria} type='submit' className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8">
+            {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
+          </button>
+
+        </div>
       </form>
     </div>
   );
