@@ -2,7 +2,7 @@ import { BsFillSearchHeartFill, BsSearchHeartFill } from "react-icons/bs";
 import { BiFilter } from "react-icons/bi";
 import { useContext, useEffect, useState } from "react";
 import { Dna } from "react-loader-spinner";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Produtos from "../../../models/Produtos";
 import { buscar } from "../../../services/Services";
@@ -11,6 +11,7 @@ import CardProduto from "../cardProduto/CardProduto";
 import CardCategoria from "../../../models/Categoria"
 import CardProdutoUsuario from "../cardProdutoUsuario/CardProdutoUsuario";
 import Carrossel from "../../carrosel/Carrossel";
+import Editar from "../../../assets/editar.png";
 
 
 const getStatusClass = (disponivel: boolean): string => {
@@ -85,17 +86,24 @@ function ListaProdutos() {
     if (usuario.tipo === "dev") {
       ListaProdutosComponent = (
         <>
-          <div className="py-20 px-20">
-            <div className="bg-white rounded-t-lg">
+          <div className="py-10 px-20">
+            <div className="bg-white rounded-t-lg p-5">
               {/* Pagina Produtos */}
-              <div className="flex mt-3 p-5 text-[#5C5C5C] text-3xl font-semibold" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '32px' }}>
+              <div className="flex mt-3 p-5 text-[#5C5C5C] text-3xl font-bold items-center justify-between">
                 <h1>Produtos</h1>
-              </div>
+    
+              {/* Botão "Add Produto" */}
+              <Link to="/produtos/novo">
+                <button className="bg-[#48ACB6] text-white px-6 py-2 rounded-full text-sm font-normal">Add Produto</button>
+              </Link>
+            </div>
+
 
               <div className="overflow-x-auto">
               <table className="min-w-full bg-white border border-gray-300 rounded-md overflow-hidden">
-                <thead className="bg-[#6753F3] text-white">
+                <thead className="bg-[#48ACB6] text-white">
                   <tr>
+                    <th className="py-4 px-4 border-b"> </th>
                     <th className="py-4 px-4 border-b">Fotos</th>
                     <th className="py-4 px-4 border-b">Nome</th>
                     <th className="py-4 px-4 border-b">Data</th>
@@ -107,7 +115,11 @@ function ListaProdutos() {
                 <tbody>
                   {filteredProducts.map((produto) => (
                     <tr key={produto.id}>
-                      <td className="py-2 px-4 border-b">
+                      {/* Link para a página de edição */}
+                      <Link to={`/produtos/editar/${produto.id}`}>
+                        <img src={Editar} alt="Botão de editar" className="w-6 mr-2 ml-8 pt-4" />
+                      </Link>
+                      <td className="py-2 px-4 border-b ml">
                         <img src={produto.foto} alt="Product" className="w-12 rounded-full" />
                       </td>
                       <td className="py-2 px-4 border-b">{produto.nome}</td>
