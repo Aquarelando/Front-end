@@ -56,7 +56,7 @@ function Carrossel() {
                     <SwiperSlide>
                         <Link to='/produtos'>
                             <img className="swiper-slide-img"
-                                src= {mochila}
+                                src={mochila}
                                 alt="Produto 2"
 
                             />
@@ -65,7 +65,7 @@ function Carrossel() {
                     <SwiperSlide>
                         <Link to='/produtos'>
                             <img className="swiper-slide-img"
-                                src= {creche}
+                                src={creche}
                                 alt="Produto 3"
 
                             />
@@ -86,7 +86,7 @@ function Carrossel() {
 
             <div className="flex justify-center space-x-4 m-[50px]">
                 <div>
-                    <p className="text-[18px] text-center font-sans">BEBÊ </p>
+                    <p className="text-[18px] text-center ">BEBÊ </p>
                     <div className="bg-[#F7DEC8] rounded-[25px] ">
                         <img src={bebe} alt="bebe1" className="w-auto p-3 " />
                     </div>
@@ -100,12 +100,15 @@ function Carrossel() {
                 </div>
 
                 <div>
-                    <p className="text-[18px] text-center">ADOLESCENTE </p>
-                    <div className="bg-[#F7DEC8] rounded-[25px]">
-                        <img src={estudante} alt="bebe1" className="w-auto p-3 " />
+                    <p className="text-[18px] text-center">ADOLESCENTE</p>
+                    <div className="bg-[#F7DEC8] rounded-[25px] relative" style={{ width: '140px', height: '175px' }}>
+                        <img
+                            src={estudante}
+                            alt="Imagem de um adolescente"
+                            className="object-contain max-w-[75%] max-h-[100%] pt-4 absolute right-4"
+                        />
                     </div>
                 </div>
-
                 <div>
                     <p className="text-[18px]">PROMOÇÃO DE VOLTA ÁS AULAS! </p>
                     <img src={frete} alt="frete" className="min-w-[600px]" />
