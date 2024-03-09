@@ -154,7 +154,6 @@ function ListaProdutos() {
     } else {
       ListaProdutosComponent = (
         <>
-          {/* Carrossel */}
           <div>
             <Carrossel />
           </div>
