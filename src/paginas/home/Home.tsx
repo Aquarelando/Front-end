@@ -1,10 +1,9 @@
 import homeLogo from '../../assets/Logo.png'
 import { Link } from 'react-router-dom';
-import Carrossel from '../../components/carrosel/Carrossel';
-import ListaProduto from '../../components/produto/listaProduto/ListaProduto';
 import seta from '../../assets/dfxKC3k.png';
 import './Home.css'
 import bemvindo from '../../assets/bemvindo.png'
+import StoryTelling from '../storytelling/StoryTelling';
 
 function Home() {
 
@@ -14,11 +13,11 @@ function Home() {
         <div className="home flex justify-center bg-gradient-to-b from-[#439da6] to-[#26668b] pb-20">
             <div className='container grid grid-cols-2 text-white'>
 
-            <div className="container ml-60">
+            <div className="container ml-60 desliza">
 
             <img src={homeLogo} alt="logo aquarelando" className="mt-20" />
                 <div className='caixa text-2xl'>
-                <div className=' pr-[80px]'>
+                <div className=' pr-[80px] mb-20'>
                 <h1 className='text-5xl font-semibold text-shadow'>1K+</h1>
                     <p className='text-base'>Reviews</p>
                 </div>
@@ -36,7 +35,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-4 items-center justify-center py-4 text-white">
+            <div className="flex flex-col gap-4 items-center justify-center py-4 text-white desliza2">
             <img src={bemvindo}  alt=""  style={{ width: "540px", height: "auto" }}/>
             <p className='text-xl'>Ajude a colorir o caminho da nova geração com a Aquarelando! Todos os lucros das compras irão diretamente para ONGs educacionais.</p>
 
@@ -52,7 +51,7 @@ function Home() {
 
 
         <div>
-            <h1>Aqui ficara nosso Storytelling</h1>
+            <StoryTelling/>
         </div>
 
         </>

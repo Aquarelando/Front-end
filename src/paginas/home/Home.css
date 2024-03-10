@@ -48,3 +48,38 @@
     transform: rotate(45deg);
     transition: transform 0.3s ease-in-out;
   }
+
+  .pulahome {
+    animation: bounce 2s 1.5; /* 1 ciclo */
+}
+
+@keyframes bounce {
+    0% {transform: translateY(0); }
+    40% {transform: translateY(-20px); }
+    60% {transform: translateY(-10px); }
+    100% {transform: translateY(0); } /* Garante que a animação termina na posição inicial */
+}
+
+  .pulsahome {
+    animation: pulse 3s 1; 
+}
+
+@keyframes pulse {
+    0%, 100% {transform: scale(1); }
+    50% {transform: scale(1.2); }
+}
+
+
+.desliza {animation: slideIn 2s 1;}
+@keyframes slideIn {
+    0% {transform: translateX(-50%); }
+    50% {transform: translateX(0); }
+    100% {transform: translateX(50%); }
+}
+
+.desliza2 {animation: slideIn2 2s 1;}
+@keyframes slideIn2 {
+    0% {transform: translateX(50%); }
+    50% {transform: translateX(0); }
+    100% {transform: translateX(-50%); }
+}

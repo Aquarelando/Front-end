@@ -10,7 +10,7 @@ import { toastAlerta } from '../../../utils/ToastAlerta';
 function FormularioProduto() {
   let navigate = useNavigate();
 
-  const[valido, setValido] = useState<string>("true")
+  const [valido, setValido] = useState<string>("true")
 
   const { id } = useParams<{ id: string }>();
 
@@ -25,6 +25,7 @@ function FormularioProduto() {
     descricao: '',
     disponivel: true,
   });
+
 
   const [produto, setProduto] = useState<Produto>({
     id: 0,
@@ -95,18 +96,21 @@ function FormularioProduto() {
     });
   }
 
+  function back() {
+    navigate('/login')
+  }
 
   function retornar() {
     navigate('/produtos');
   }
 
-  function handleSelo(e: ChangeEvent<HTMLInputElement>){
+  function handleSelo(e: ChangeEvent<HTMLInputElement>) {
     setValido(e.target.value)
     console.log(produto)
-    if(e.target.value == "true"){
-        setProduto({...produto, seloInmetro: true})
-    }else {
-      setProduto({...produto, seloInmetro: false})
+    if (e.target.value == "true") {
+      setProduto({ ...produto, seloInmetro: true })
+    } else {
+      setProduto({ ...produto, seloInmetro: false })
     }
   }
 
@@ -141,7 +145,7 @@ function FormularioProduto() {
         })
 
         toastAlerta('Produto cadastrada com sucesso', 'sucesso')
-        
+
       } catch (error: any) {
         if (error.toString().includes('403')) {
           toastAlerta('O token expirou, favor logar novamente', 'info')
@@ -158,10 +162,11 @@ function FormularioProduto() {
   const carregandoCategoria = categoria.descricao === '';
 
   return (
-    <div className="container flex flex-col mx-auto items-center">
+    <div className="w-[50rem] h-[50%] container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10 mb-10
+      bg-gradient-to-b from-[#439da6] to-[#26668b] border-4 border-[#fa769c] border-x-[#FD98B4]">
       <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Produto' : 'Cadastrar um novo Produto'}</h1>
 
-      <form onSubmit={gerarNovoProduto} className="flex flex-col w-1/2 gap-4">
+      <form onSubmit={gerarNovoProduto} className="w-1/2 flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <label htmlFor="nome">Nome do Produto</label>
           <input
@@ -222,30 +227,30 @@ function FormularioProduto() {
             className="border-2 border-slate-700 rounded p-2"
           />
         </div>
-        <div className="flex flex-col w-full">
+        <div className="flex items-center justify-center gap-20 mb-4">
           <label htmlFor="ativo">
             <input
-                type="radio"
-                id="valido"
-                name="disponivel"
-                className="border-2 border-slate-700 rounded p-2"
-                value="true"
-                onChange={handleSelo}
+              type="radio"
+              id="valido"
+              name="disponivel"
+              className="border-2 border-slate-700 rounded p-2"
+              value="true"
+              onChange={handleSelo}
             />
-            {' '}Possui Selo Inmetro 
-            </label>
+            {' '}Possui Selo Inmetro ✅
+          </label>
 
-            <label htmlFor="inativo">
+          <label htmlFor="inativo">
             <input
-                type="radio"
-                id="invalido"
-                name="disponivel"
-                className="border-2 border-slate-700 rounded p-2"
-                value="false"
-                onChange={handleSelo}
+              type="radio"
+              id="invalido"
+              name="disponivel"
+              className="border-2 border-slate-700 rounded p-2"
+              value="false"
+              onChange={handleSelo}
             />
-            {' '}Não Possui Selo Inmetro
-            </label>
+            {' '}Não Possui Selo Inmetro ❌
+          </label>
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="preco">Preço do Produto</label>
@@ -270,9 +275,17 @@ function FormularioProduto() {
             ))}
           </select>
         </div>
-        <button disabled={carregandoCategoria} type='submit' className='rounded disabled:bg-slate-200 bg-[#000000] hover:bg-[#696969] text-white font-bold w-1/2 mx-auto block py-2'>
-          {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
-        </button>
+        <div className="flex items-center justify-center gap-20 mb-4">
+          <button className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8" onClick={back}>
+            Voltar
+          </button>
+
+          <button
+            disabled={carregandoCategoria} type='submit' className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8">
+            {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
+          </button>
+
+        </div>
       </form>
     </div>
   );

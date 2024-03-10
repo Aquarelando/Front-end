@@ -7,13 +7,13 @@ import { toastAlerta } from '../../../utils/ToastAlerta';
 
 function FormularioCategoria() {
   const [categoria, setCategoria] = useState<Categoria>({
-    id:0,
+    id: 0,
     nome: "",
     descricao: "",
     disponivel: true
   });
 
-  const[ativo, setAtivo] = useState<string>("true")
+  const [ativo, setAtivo] = useState<string>("true")
 
   let navigate = useNavigate();
 
@@ -44,13 +44,17 @@ function FormularioCategoria() {
 
   }
 
-  function handleDisponivel(e: ChangeEvent<HTMLInputElement>){
+  function back() {
+    navigate('/login')
+  }
+
+  function handleDisponivel(e: ChangeEvent<HTMLInputElement>) {
     setAtivo(e.target.value)
 
-    if(e.target.value == "true"){
-        setCategoria({...categoria, disponivel: true})
-    }else {
-      setCategoria({...categoria, disponivel: false})
+    if (e.target.value == "true") {
+      setCategoria({ ...categoria, disponivel: true })
+    } else {
+      setCategoria({ ...categoria, disponivel: false })
     }
   }
   console.log(JSON.stringify(categoria))
@@ -114,13 +118,14 @@ function FormularioCategoria() {
   }, [token]);
   console.log(categoria)
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto">
+    <div className="w-[50rem] container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10
+     bg-gradient-to-b from-[#439da6] to-[#26668b] border-4 border-[#fa769c] border-x-[#FD98B4]">
       <h1 className="text-4xl text-center my-8">
         {id === undefined ? 'Cadastre uma nova categoria' : 'Editar categoria'}
       </h1>
 
       <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
-      <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2">
           <label htmlFor="nome">Nome da Categoria</label>
           <input
             type="text"
@@ -142,37 +147,46 @@ function FormularioCategoria() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
-        <div className="flex flex-col w-full">
+        <div className="flex items-center justify-center gap-20 mb-4">
           <label htmlFor="ativo">
-            <input
-                type="radio"
-                id="ativo"
-                name="disponivel"
-                className="border-2 border-slate-700 rounded p-2"
-                value="true"
-                onChange={handleDisponivel}
-            />
-            {' '}Disponivel
-            </label>
 
-            <label htmlFor="inativo">
             <input
-                type="radio"
-                id="inativo"
-                name="disponivel"
-                className="border-2 border-slate-700 rounded p-2"
-                value="false"
-                onChange={handleDisponivel}
+              type="radio"
+              id="ativo"
+              name="disponivel"
+              className="border-2 border-slate-700 rounded"
+              value="true"
+              onChange={handleDisponivel}
             />
-            {' '}Indisponivel
-            </label>
+
+            {' '}Disponivel ✅
+          </label>
+
+          <label htmlFor="inativo">
+            <input
+              type="radio"
+              id="inativo"
+              name="disponivel"
+              className="border-2 border-slate-700 rounded p-2"
+              value="false"
+              onChange={handleDisponivel}
+            />
+            {' '}Indisponivel ❌
+          </label>
         </div>
+
+        <div className="flex items-center justify-center gap-20 mb-4">
+          <button className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8" onClick={back}>
+            Voltar
+          </button>
+          
         <button
-          className="rounded text-slate-100 bg-[#4F4F4F] hover:bg-[#696969] w-1/2 py-2 mx-auto block"
+          className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8"
           type="submit"
         >
           {id === undefined ? 'Cadastrar' : 'Editar'}
-        </button>
+          </button>
+        </div>
       </form>
     </div>
   );

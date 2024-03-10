@@ -1,0 +1,48 @@
+/* estilos.css */
+
+.foto-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.imagem-foto {
+    width: 100%; /* Certifique-se de que a imagem ocupe 100% da largura do contêiner */
+    transition: transform 0.4s ease-in-out;
+}
+
+.foto-container:hover .imagem-foto {
+    transform: scale(0.9); /* Ajuste conforme necessário para o nível de zoom desejado */
+}
+
+.descricao-holder {
+    position: absolute;
+    top: 10px;
+    left: 120%;
+    height: 90.5%;
+    width: 49%; /* Ajuste conforme necessário */
+    transition: all 0.4s ease-in-out;
+    text-align: left;
+    padding: 10px;
+    margin-left: 10px;
+    box-sizing: border-box;
+}
+
+.descricao-holder h2{
+    font-size: 16px;
+    margin-bottom: 1px;
+}
+
+.descricao-holder p {
+    max-width: 100px;
+    font-size: 12px;
+    text-transform:  none;
+}
+
+
+
+.foto-container:hover .descricao-holder {
+    left: 0;
+}
+
+

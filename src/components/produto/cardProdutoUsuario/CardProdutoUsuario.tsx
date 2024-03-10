@@ -18,7 +18,6 @@ function CardProdutoUsuario({ produto }: CardProdutoProps) {
             <span className="mr-3 text-xs text-gray-400 uppercase"></span>
             <p className="block text-lg font-bold text-center text-black capitalize truncate">{produto.nome}</p>
             <div>
-                
                 {produto.descricao}
               </div>
             <div className="flex items-center">

@@ -19,6 +19,7 @@ import Cart from './components/cart/Cart';
 import 'react-toastify/dist/ReactToastify.css';
 import Pagamentos from './paginas/pagamentos/Pagamentos';
 import Perfil from './paginas/perfil/Perfil';
+import Doacao from './paginas/doacao/Doacao';
 
 function App() {
   return (
@@ -41,12 +42,12 @@ function App() {
                 <Route path="/editarCategoria/:id" element={<FormularioCategoria />} />
                 <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
                 <Route path="/produtos" element={<ListaProdutos />} />
-                <Route path="/cadastroProduto" element={<FormularioProduto />} />
-                <Route path="/editarProduto/:id" element={<FormularioProduto />} />
+                <Route path="/produtos/novo" element={<FormularioProduto />} />
+                <Route path="/produtos/editar/:id" element={<FormularioProduto />} />
                 <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/seguranca" element={<Pagamentos />}/>
-
+                <Route path="/doacao" element={<Doacao />} />
               </Routes>
             </div>
             <Footer />
