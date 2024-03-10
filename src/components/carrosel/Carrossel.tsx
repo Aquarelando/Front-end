@@ -20,7 +20,7 @@ import "./Carrossel.css";
 function Carrossel() {
     return (
         <>
-            <div>
+            <div className="mobilemax:hidden">
                 {/* 
                     Adicionando o Componente Swiper
                     e configurando algumas props            
@@ -84,7 +84,7 @@ function Carrossel() {
                 </Swiper>
             </div>
 
-            <div className="flex justify-center space-x-4 m-[50px]">
+            <div className="flex justify-center space-x-4 m-[50px] mobilemax:hidden">
                 <div>
                     <p className="text-[18px] text-center font-sans">BEBÊ </p>
                     <div className="bg-[#F7DEC8] rounded-[25px] ">

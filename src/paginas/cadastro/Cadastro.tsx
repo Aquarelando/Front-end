@@ -82,12 +82,11 @@ function Cadastro() {
     <>
 <div className="w-full h-screen bg-rosalogin">
   
-  <div id='bgform' className="p-24 relative h-full ml-auto lg:w-6/12 shadow-lg">
+  <div id='bgform' className="p-24 mobilemax:p-3 relative h-full ml-auto lg:w-6/12 shadow-lg">
     
-    <h3 className="mb-8 text-2xl font-bold text-white">Cadastro</h3>
-
+    <h3 className="mb-8 mobilemax:mb-2 mobilemax:text-center text-2xl font-bold text-white">Cadastro</h3>
           <form onSubmit={cadastrarNovoUsuario}>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-3 mobilemax:gap-0 sm:grid-cols-2">
               <div className="flex flex-col w-full">
                 <label htmlFor="nome" className='text-white'>Nome</label>
                 <input
@@ -96,7 +95,7 @@ function Cadastro() {
                   name="nome"
                   placeholder="Nome completo"
                   value={usuario.nome}
-                  className="w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                  className="w-full px-6 py-2 mobilemax:py-1 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
                   onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                 />
               </div>
@@ -119,7 +118,7 @@ function Cadastro() {
               id="data_nascimento"
               name="data_nascimento"
               placeholder="Data de Nascimento"
-              className="text-gray-400 w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+              className="text-gray-400 mobilemax:py-1 w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               value={usuario.data_nascimento} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -131,7 +130,7 @@ function Cadastro() {
               id="cpf"
               name="cpf"
               placeholder="CPF(Somente em numeros)"
-              className="w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+              className="w-full  mobilemax:py-1 px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               value={usuario.cpf} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -143,7 +142,7 @@ function Cadastro() {
               id="foto"
               name="foto"
               placeholder="URL da Foto"
-              className="w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+              className="w-full px-6 mobilemax:py-1 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               value={usuario.foto} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -156,7 +155,7 @@ function Cadastro() {
               id="email"
               name="email"
               placeholder="Email"
-              className="w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+              className="w-full px-6 mobilemax:py-1 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               value={usuario.email} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -169,7 +168,7 @@ function Cadastro() {
               id="senha"
               name="senha"
               placeholder="Senha(minimo 8 caracteres)"
-              className="w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+              className="w-full px-6 py-2 mobilemax:py-1 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               value={usuario.senha} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -181,7 +180,7 @@ function Cadastro() {
               id="confirmarSenha"
               name="confirmarSenha"
               placeholder="Confirme sua Senha"
-              className="w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+              className="w-full px-6 mobilemax:py-1 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               value={confirmaSenha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
             />
@@ -197,7 +196,7 @@ function Cadastro() {
           </div>
     </form>
   </div>
-  <div hidden className="flex justify-center uniq:hidden">
+  <div hidden className="flex justify-center uniq:hidden mobilemax:hidden">
     <img src={LogoAquarelando2} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw]' />
   </div>
 

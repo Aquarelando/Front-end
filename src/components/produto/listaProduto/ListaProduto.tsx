@@ -161,9 +161,9 @@ function ListaProdutos() {
           <div className="flex justify-center mt-3 p-3 text-white font-light text-3xl font-bold bg-[#439DA6]">
             <h1>Produtos</h1>
           </div>
-          <div className="flex gap-4 justify-space-evenly">
+          <div className="flex gap-4 justify-space-evenly ">
             <div>
-              <div className="bg-[#439DA6] text-white p-2">
+              <div className="bg-[#439DA6] text-white p-2 mobilemax:hidden">
                 <h1>Categorias</h1>
                 <CardFiltro
                   nome="Mochila"

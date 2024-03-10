@@ -16,7 +16,7 @@ import "./Carrossel3.css";
 function Carrossel() {
     return (
         <>
-            <div>
+            <div >
                 {/* 
                     Adicionando o Componente Swiper
                     e configurando algumas props            

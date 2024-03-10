@@ -3,9 +3,10 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      tela: {
-        Bia: "2560x1080"
-      },
+      screens: {
+        'mobilemax': {'max': '641px', },
+        'mobilemin': '640px',
+     },
       colors: {
         rosalogin: "#fd98b4 ",
         buttonlogin: "#f3adce",
