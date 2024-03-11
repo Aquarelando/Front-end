@@ -118,7 +118,7 @@ function FormularioCategoria() {
   }, [token]);
   console.log(categoria)
   return (
-    <div className="w-[50rem] container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10
+    <div className="w-full container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10
      bg-gradient-to-b from-[#439da6] to-[#26668b] border-4 border-[#fa769c] border-x-[#FD98B4]">
       <h1 className="text-4xl text-center my-8">
         {id === undefined ? 'Cadastre uma nova categoria' : 'Editar categoria'}
@@ -175,16 +175,15 @@ function FormularioCategoria() {
           </label>
         </div>
 
-        <div className="flex items-center justify-center gap-20 mb-4">
-          <button className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8" onClick={back}>
+        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 md:gap-20 mb-4">
+          <button className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-full md:w-40 py-2 block mb-8 md:mb-0" onClick={back}>
             Voltar
           </button>
-          
-        <button
-          className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8"
-          type="submit"
-        >
-          {id === undefined ? 'Cadastrar' : 'Editar'}
+          <button
+            className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-full md:w-40 py-2 block mb-8"
+            type="submit"
+          >
+            {id === undefined ? 'Cadastrar' : 'Editar'}
           </button>
         </div>
       </form>
