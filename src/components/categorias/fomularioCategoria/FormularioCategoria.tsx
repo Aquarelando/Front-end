@@ -118,7 +118,7 @@ function FormularioCategoria() {
   }, [token]);
   console.log(categoria)
   return (
-    <div className="w-full container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10
+    <div className="md:w-[50rem] w-full  container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10
      bg-gradient-to-b from-[#439da6] to-[#26668b] border-4 border-[#fa769c] border-x-[#FD98B4]">
       <h1 className="text-4xl text-center my-8">
         {id === undefined ? 'Cadastre uma nova categoria' : 'Editar categoria'}
