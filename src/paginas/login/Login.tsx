@@ -47,7 +47,7 @@ function Login() {
     <>
       
       <div className="flex justify-around w-full h-screen bg-rosalogin ">
-        <div className="w-full">
+        <div className="w-full mobilemax:hidden">
         <Link
               to="/home"
               className="font-semibold uppercase flex items-center ml-0 mr-20 logo-container p-5 pl-[3rem] text-white"
@@ -58,6 +58,15 @@ function Login() {
           <img src={LogoAquarelando2} alt="Logo-Aquarelando" className="p-[5vh] pulsahome" />
         </div>
         <div id="bgform" className="w-[100%] p-[10%] pt-[10rem] flex flex-col justify-center">
+       <div className="flex justify-center pl-5">
+       <Link
+              to="/home"
+              className="font-semibold uppercase flex items-center ml-0 mr-20 logo-container p-5 pl-[3rem] text-white"
+            >
+              <img  src={paintLogo} alt="Paint logo" className="mr-2  leading-7 bg-gradient-to-r from-[#439da6] to-[#26668b] rounded-full" />
+              Aquarelando
+          </Link>
+       </div>
           <div className="flex justify-center gap-2 p-4 rounded-xl bg-blue-50 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">
             <img src={LogoGoogle} className="w-5 " alt="GoogleImg" />
             <span className="block text-sm font-medium tracking-wide text-blue-700 w-max">

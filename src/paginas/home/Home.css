@@ -68,3 +68,18 @@
     0%, 100% {transform: scale(1); }
     50% {transform: scale(1.2); }
 }
+
+
+.desliza {animation: slideIn 2s 1;}
+@keyframes slideIn {
+    0% {transform: translateX(-50%); }
+    50% {transform: translateX(0); }
+    100% {transform: translateX(50%); }
+}
+
+.desliza2 {animation: slideIn2 2s 1;}
+@keyframes slideIn2 {
+    0% {transform: translateX(50%); }
+    50% {transform: translateX(0); }
+    100% {transform: translateX(-50%); }
+}

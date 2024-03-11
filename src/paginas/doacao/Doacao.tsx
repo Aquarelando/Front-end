@@ -5,6 +5,7 @@ import './Doacao.css'
 
 
 function Doacao() {
+  window.scrollTo(0, 0);
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [valorDoacao, setValorDoacao] = useState('');
