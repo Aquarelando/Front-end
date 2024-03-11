@@ -163,11 +163,7 @@ function FormularioProduto() {
 
   return (
     <div className="w-[50rem] h-[50%] container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10 mb-10
-<<<<<<< HEAD
      bg-gradient-to-b from-[#439da6] to-[#26668b] border-4 border-[#fa769c] border-x-[#FD98B4]">
-=======
-      bg-gradient-to-b from-[#439da6] to-[#26668b] border-4 border-[#fa769c] border-x-[#FD98B4]">
->>>>>>> a100e17ef6eedef0ed24153b826a76bee94827a4
       <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Produto' : 'Cadastrar um novo Produto'}</h1>
 
       <form onSubmit={gerarNovoProduto} className="w-1/2 flex flex-col gap-4">
@@ -279,24 +275,10 @@ function FormularioProduto() {
             ))}
           </select>
         </div>
-<<<<<<< HEAD
         <button
           disabled={carregandoCategoria} type='submit' className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8">
           {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
         </button>
-=======
-        <div className="flex items-center justify-center gap-20 mb-4">
-          <button className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8" onClick={back}>
-            Voltar
-          </button>
-
-          <button
-            disabled={carregandoCategoria} type='submit' className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-40 py-2 mx-auto block mb-8">
-            {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
-          </button>
-
-        </div>
->>>>>>> a100e17ef6eedef0ed24153b826a76bee94827a4
       </form>
     </div>
   );

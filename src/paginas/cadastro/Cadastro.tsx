@@ -5,12 +5,8 @@ import { cadastrarUsuario } from '../../services/Services'
 import './Cadastro.css'
 import { toastAlerta } from '../../utils/ToastAlerta'
 import LogoAquarelando2 from '../../assets/Logo2.png';
-<<<<<<< HEAD
 import paintLogo from '../../assets/paintLogo.png';
 import '../home/Home.css'
-
-=======
->>>>>>> a100e17ef6eedef0ed24153b826a76bee94827a4
 
 function Cadastro() {
 
@@ -21,11 +17,7 @@ function Cadastro() {
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: '',
-<<<<<<< HEAD
     tipo: 'user',
-=======
-    tipo:'dev',
->>>>>>> a100e17ef6eedef0ed24153b826a76bee94827a4
     data_nascimento: '',
     cpf: '',
     foto: '',
@@ -90,7 +82,6 @@ function Cadastro() {
 
   return (
     <>
-<<<<<<< HEAD
       <div className="flex justify-around w-full h-screen bg-rosalogin">
         <div className="">
           <Link
@@ -106,13 +97,6 @@ function Cadastro() {
 
           <h3 className="mb-8 text-2xl font-bold text-white">Cadastro</h3>
 
-=======
-<div className="w-full h-screen bg-rosalogin">
-  
-  <div id='bgform' className="p-24 mobilemax:p-3 relative h-full ml-auto lg:w-6/12 shadow-lg">
-    
-    <h3 className="mb-8 mobilemax:mb-2 mobilemax:text-center text-2xl font-bold text-white">Cadastro</h3>
->>>>>>> a100e17ef6eedef0ed24153b826a76bee94827a4
           <form onSubmit={cadastrarNovoUsuario}>
             <div className="grid gap-3 mobilemax:gap-0 sm:grid-cols-2">
               <div className="flex flex-col w-full">
@@ -139,99 +123,59 @@ function Cadastro() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div> */}
-          <div className="flex flex-col w-full">
-            <label htmlFor="data_nascimento" className='text-white'>Data de Nascimento</label>
-            <input
-              type="date"
-              id="data_nascimento"
-              name="data_nascimento"
-              placeholder="Data de Nascimento"
-              className="text-gray-400 mobilemax:py-1 w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
-              value={usuario.data_nascimento} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="cpf" className='text-white'>CPF</label>
-            <input
-              type="text"
-              id="cpf"
-              name="cpf"
-              placeholder="CPF(Somente em numeros)"
-              className="w-full  mobilemax:py-1 px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
-              value={usuario.cpf} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="foto" className='text-white'>Foto</label>
-            <input
-              type="text"
-              id="foto"
-              name="foto"
-              placeholder="URL da Foto"
-              className="w-full px-6 mobilemax:py-1 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
-              value={usuario.foto} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
+              <div className="flex flex-col w-full">
+                <label htmlFor="data_nascimento" className='text-white'>Data de Nascimento</label>
+                <input
+                  type="date"
+                  id="data_nascimento"
+                  name="data_nascimento"
+                  placeholder="Data de Nascimento"
+                  className="text-gray-400 mobilemax:py-1 w-full px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                  value={usuario.data_nascimento}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+              </div>
+              <div className="flex flex-col w-full">
+                <label htmlFor="cpf" className='text-white'>CPF</label>
+                <input
+                  type="text"
+                  id="cpf"
+                  name="cpf"
+                  placeholder="CPF(Somente em numeros)"
+                  className="w-full  mobilemax:py-1 px-6 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                  value={usuario.cpf}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+              </div>
+              <div className="flex flex-col w-full">
+                <label htmlFor="foto" className='text-white'>Foto</label>
+                <input
+                  type="text"
+                  id="foto"
+                  name="foto"
+                  placeholder="URL da Foto"
+                  className="w-full px-6 mobilemax:py-1 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                  value={usuario.foto}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+              </div>
+            </div>
+            <div hidden className="flex justify-center uniq:hidden">
+              <img src={LogoAquarelando2} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw] pulsahome' />
+            </div>
+            <div className="mt-10 flex justify-around w-full gap-8">
+              <button className='rounded-2xl text-white bg-[#004b71] hover:bg-[#483D8B] w-[30%] py-4' onClick={back}>
+                Voltar
+              </button>
+              <button className='rounded-2xl bg-buttonlogin hover:bg-rosalogin focus:bg-sky-600 active:bg-sky-800 text-white w-[30%] py-4' type='submit'>
+                Cadastrar
+              </button>
+            </div>
+          </form>
         </div>
-<<<<<<< HEAD
-        <div hidden className="flex justify-center uniq:hidden">
-          <img src={LogoAquarelando2} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw] pulsahome' />
-=======
-          <div className="flex flex-col w-full">
-            <label htmlFor="email" className='text-white'>Email</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Email"
-              className="w-full px-6 mobilemax:py-1 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
-              value={usuario.email} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-        <div className="grid gap-3 sm:grid-cols-2">
-          <div className="flex flex-col w-full">
-            <label htmlFor="senha" className='text-white'>Senha</label>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
-              placeholder="Senha(minimo 8 caracteres)"
-              className="w-full px-6 py-2 mobilemax:py-1 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
-              value={usuario.senha} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="confirmarSenha" className='text-white'>Confirmar Senha</label>
-            <input
-              type="password"
-              id="confirmarSenha"
-              name="confirmarSenha"
-              placeholder="Confirme sua Senha"
-              className="w-full px-6 mobilemax:py-1 py-2 transition bg-transparent ring-1 ring-red-300 rounded-xl disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
-              value={confirmaSenha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
-            />
-          </div>
->>>>>>> a100e17ef6eedef0ed24153b826a76bee94827a4
+        <div hidden className="flex justify-center uniq:hidden mobilemax:hidden">
+          <img src={LogoAquarelando2} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw]' />
         </div>
-          <div className="mt-10 flex justify-around w-full gap-8">
-            <button className='rounded-2xl text-white bg-[#004b71] hover:bg-[#483D8B] w-[30%] py-4' onClick={back}>
-              Voltar
-            </button>
-            <button className='rounded-2xl bg-buttonlogin hover:bg-rosalogin focus:bg-sky-600 active:bg-sky-800 text-white w-[30%] py-4' type='submit'>
-              Cadastrar
-            </button>
-          </div>
-    </form>
-  </div>
-  <div hidden className="flex justify-center uniq:hidden mobilemax:hidden">
-    <img src={LogoAquarelando2} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw]' />
-  </div>
 
       </div>
     </>
