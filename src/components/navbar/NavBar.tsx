@@ -58,7 +58,7 @@ function Navbar() {
                   <Link to='/produtos' className='mr-8 '>Produtos</Link>
                   <Link to='/produtos/novo' className='mr-8'>Cadastrar Produto</Link>
                   <Link to='/categorias' className='mr-8'>Categorias</Link>
-                  <Link to='/cadastroCategoria' className='mr-8'>Cadastrar Categoria</Link>
+                  <Link to='/categoria/novo' className='mr-8'>Cadastrar Categoria</Link>
                   <Link to='' onClick={logout} className=' py-1 px-4 mt-0'>Sair</Link>
                 </div>
               </div>
