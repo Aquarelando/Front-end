@@ -38,7 +38,7 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/perfil" element={<Perfil />} />
                 <Route path="/categorias" element={<ListaCategoria />} />
-                <Route path="/cadastroCategoria" element={<FormularioCategoria />} />
+                <Route path="/categoria/novo" element={<FormularioCategoria />} />
                 <Route path="/editarCategoria/:id" element={<FormularioCategoria />} />
                 <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
                 <Route path="/produtos" element={<ListaProdutos />} />
@@ -46,7 +46,7 @@ function App() {
                 <Route path="/produtos/editar/:id" element={<FormularioProduto />} />
                 <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/seguranca" element={<Pagamentos />}/>
+                <Route path="/seguranca" element={<Pagamentos />} />
                 <Route path="/doacao" element={<Doacao />} />
               </Routes>
             </div>
