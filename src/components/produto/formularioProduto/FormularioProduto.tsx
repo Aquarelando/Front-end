@@ -162,7 +162,11 @@ function FormularioProduto() {
   const carregandoCategoria = categoria.descricao === '';
 
   return (
+<<<<<<< HEAD
     <div className=" w-full h-[50%] container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10 mb-10
+=======
+    <div className="md:w-[50rem] w-full  h-[50%] container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10 mb-10
+>>>>>>> 5090a247597b530595b19edfb61c57a6d7b83fb7
      bg-gradient-to-b from-[#439da6] to-[#26668b] border-4 border-[#fa769c] border-x-[#FD98B4] ">
       <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Produto' : 'Cadastrar um novo Produto'}</h1>
       <form onSubmit={gerarNovoProduto} className="w-1/2 flex flex-col gap-4 sm:w-3/4" >
