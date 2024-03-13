@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import Menino from '../../assets/menino na escada.png'; 
 import Menina from '../../assets/menina na escada.png';
-
-
-function Doacao() {
+import ModalAgradecimento from './ModalDoacao';
+function DoacaoPage() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [valorDoacao, setValorDoacao] = useState('');
@@ -32,7 +31,6 @@ function Doacao() {
   };
 
   return (
-    
     <div className="flex justify-center items-center h-screen bg-gradient-to-b from-[#439DA6] to-[#26668b]">
       <div className="w-3/4 max-w-lg relative">
         <div className="bg-[#FD98B4] rounded-lg shadow-lg p-8">
@@ -71,7 +69,9 @@ function Doacao() {
                 className="block w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
               />
             </div>
-            {doacaoCompleta && <p className="text-green-600 mb-4">Doação completada com sucesso!</p>}
+            {doacaoCompleta && (
+              <ModalAgradecimento />
+            )}
             <div className="flex justify-center">
               <button className='px-4 py-2 text-white bg-[#4088C4] rounded-md hover:bg-[#3478A7] focus:outline-none' type='submit'>
                 Doar
@@ -90,4 +90,4 @@ function Doacao() {
   );
 }
 
-export default Doacao;
+export default DoacaoPage;
