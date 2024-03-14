@@ -1,5 +1,5 @@
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Produto from '../../../models/Produtos';
 import Categoria from '../../../models/Categoria';
@@ -162,63 +162,48 @@ function FormularioProduto() {
   const carregandoCategoria = categoria.descricao === '';
 
   return (
-<<<<<<< HEAD
-    <div className=" w-full h-[50%] container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10 mb-10
-=======
-    <div className="md:w-[50rem] w-full  h-[50%] container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10 mb-10
->>>>>>> 5090a247597b530595b19edfb61c57a6d7b83fb7
-     bg-gradient-to-b from-[#439da6] to-[#26668b] border-4 border-[#fa769c] border-x-[#FD98B4] ">
-      <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Produto' : 'Cadastrar um novo Produto'}</h1>
-      <form onSubmit={gerarNovoProduto} className="w-1/2 flex flex-col gap-4 sm:w-3/4" >
-        <div className="flex flex-col gap-2  ">
-          <label htmlFor="nome">Nome do Produto</label>
-          <input
-            value={produto.nome}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="text"
-            placeholder="Nome"
-            name="nome"
-            required
-            className="border-2 border-slate-700 rounded p-2"
-          />
+    <div className="md:w-[35%] w-full container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10 mb-10 bg-gradient-to-b fro border-4 ">
+      <h1 className="text-3xl text-center my-7">{id !== undefined ? 'Editar Produto' : 'Cadastrar um novo Produto'}</h1>
+      <form onSubmit={gerarNovoProduto} className="w-full flex flex-col gap-4 sm:w-3/4 sm:flex-row sm:flex-wrap">
+        <div className="flex flex-col sm:flex-row gap-10">
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label htmlFor="nome">Nome do Produto</label>
+            <input
+              value={produto.nome}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              type="text"
+              placeholder="Nome"
+              name="nome"
+              required
+              className="border-2 border-gray-400 rounded w-full sm:w-[15rem] focus:outline-none focus:border-blue-500"
+            />
+          </div>
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label htmlFor="quantidade">Quantidade do Produto</label>
+            <input
+              value={produto.quantidade}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              type="number"
+              placeholder="Quantidade"
+              name="quantidade"
+              required
+              className="border-2 border-gray-400 rounded w-full sm:w-[16rem] focus:outline-none focus:border-blue-500"
+            />
+          </div>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col">
           <label htmlFor="descricao">Descrição do Produto</label>
           <input
             value={produto.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             type="text"
-            placeholder="Descricao"
+            placeholder="Descrição"
             name="descricao"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="border-2 border-gray-400 pl-1 pt-2 p-[10rem] sm:w-[full] w-[33.4rem] rounded focus:outline-none focus:border-blue-500"
           />
         </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="dataValidade">Data de Validade do Produto</label>
-          <input
-            value={produto.dataValidade}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="date"
-            placeholder="Data de Validade"
-            name="dataValidade"
-            required
-            className="border-2 border-slate-700 rounded p-2"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="quantidade">Quantidade do Produto</label>
-          <input
-            value={produto.quantidade}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="number"
-            placeholder="Quantidade"
-            name="quantidade"
-            required
-            className="border-2 border-slate-700 rounded p-2"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 ">
           <label htmlFor="foto">Foto do Produto</label>
           <input
             value={produto.foto}
@@ -227,68 +212,67 @@ function FormularioProduto() {
             placeholder="Foto"
             name="foto"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="border-2 border-gray-400 rounded sm:w-[full] w-[33.4rem] focus:outline-none focus:border-blue-500"
           />
         </div>
-        <div className="flex items-center justify-center gap-20 mb-4">
-          <label htmlFor="ativo">
+        <div className="flex flex-col sm:flex-row gap-10">
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label htmlFor="preco">Preço do Produto</label>
             <input
-              type="radio"
-              id="valido"
-              name="disponivel"
-              className="border-2 border-slate-700 rounded p-2"
-              value="true"
-              onChange={handleSelo}
+              value={produto.preco}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              type="number"
+              placeholder="Preço"
+              name="preco"
+              required
+              className="border-2 border-gray-400 rounded sm:w-[15rem] w-full focus:outline-none focus:border-blue-500"
             />
-            {' '}Possui Selo Inmetro ✅
-          </label>
+          </div>
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label htmlFor="dataValidade">Data de Validade do Produto</label>
+            <input
+              value={produto.dataValidade}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              type="date"
+              placeholder="Data de Validade"
+              name="dataValidade"
+              required
+              className="border-2 border-gray-400 rounded sm:w-[16rem] w-full focus:outline-none focus:border-blue-500"
+            />
+          </div>
+        </div>
 
-          <label htmlFor="inativo">
-            <input
-              type="radio"
-              id="invalido"
-              name="disponivel"
-              className="border-2 border-slate-700 rounded p-2"
-              value="false"
-              onChange={handleSelo}
-            />
-            {' '}Não Possui Selo Inmetro ❌
-          </label>
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="preco">Preço do Produto</label>
-          <input
-            value={produto.preco}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="number"
-            placeholder="Preço"
-            name="preco"
-            required
-            className="border-2 border-slate-700 rounded p-2"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col w-full">
           <p>Nome da Categoria</p>
-          <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
-            <option value="" selected disabled>Selecione uma Categoria</option>
+          <select name="categoria" id="categoria" className="border-2 border-gray-400 rounded sm:w-[33.6rem] w-full p-2 focus:outline-none focus:border-blue-500">
+            <option value="" disabled>Select a Category</option>
             {categorias.map((categoria) => (
-              <>
-                <option value={categoria.id} >{categoria.descricao}</option>
-              </>
+              <option key={categoria.id} value={categoria.id}>{categoria.descricao}</option>
             ))}
           </select>
-        </div >
-        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 md:gap-20 mb-4">
-          <button className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-full md:w-40 py-2 block mb-8 md:mb-0" onClick={back}>
+        </div>
+        <div className="flex flex-col  sm:flex-row mx-auto gap-6 mb-3">
+
+          <Link to={`/deletarProduto/${produto.id}`}>
+            <button className="rounded-xl text-white bg-[#FD98B4] hover:bg-[#439DA6] w-full sm:w-auto p-3 px-9 block" >
+              Deletar
+            </button>
+          </Link>
+
+          <button className="rounded-xl text-white bg-[#857a7d] hover:bg-[#439DA6] w-full sm:w-auto p-3 px-9 block" onClick={back}>
             Voltar
           </button>
-          <button
-            disabled={carregandoCategoria} type='submit' className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-full md:w-40 py-2 block mb-8">
+
+
+          <button disabled={carregandoCategoria} type='submit' className="rounded-xl text-white bg-[#FD98B4] hover:bg-[#439DA6] w-full sm:w-auto p-3 px-9 block">
             {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
           </button>
         </div>
+
+
       </form>
     </div>
+
   );
 }
 
