@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Services'
 import './Cadastro.css'
+import '../home/Home.css'
 import { toastAlerta } from '../../utils/ToastAlerta'
 import LogoAquarelando2 from '../../assets/Logo2.png';
 
@@ -15,7 +16,7 @@ function Cadastro() {
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: '',
-    tipo:'dev',
+    tipo:'user',
     data_nascimento: '',
     cpf: '',
     foto: '',
@@ -197,7 +198,7 @@ function Cadastro() {
     </form>
   </div>
   <div hidden className="flex justify-center uniq:hidden mobilemax:hidden">
-    <img src={LogoAquarelando2} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw]' />
+    <img src={LogoAquarelando2} alt="Logo-Aquarelando" className='absolute top-[16vh] left-[6vw] pulsahome' />
   </div>
 
       </div>

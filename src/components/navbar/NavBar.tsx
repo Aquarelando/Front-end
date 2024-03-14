@@ -8,9 +8,8 @@ import paintLogo from '../../assets/paintLogo.png';
 import { toastAlerta } from '../../utils/ToastAlerta';
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import perfil from '../../assets/perfil.png'
-import Logo from '../../assets/Logo.png'
 
 function Navbar() {
 
@@ -24,7 +23,7 @@ function Navbar() {
     return classes.filter(Boolean).join(' ')
   }
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { usuario, handleLogout } = useContext(AuthContext);
 
@@ -36,7 +35,7 @@ function Navbar() {
 
   let navbarComponent;
 
-  let location = useLocation()
+  const location = useLocation()
 
   if (location.pathname.includes('/login') || location.pathname.includes('/cadastro')) {
 

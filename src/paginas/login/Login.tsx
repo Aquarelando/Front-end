@@ -48,14 +48,7 @@ function Login() {
       
       <div className="flex justify-around w-full h-screen bg-rosalogin ">
         <div className="w-full mobilemax:hidden">
-        <Link
-              to="/home"
-              className="font-semibold uppercase flex items-center ml-0 mr-20 logo-container p-5 pl-[3rem] text-white"
-            >
-              <img  src={paintLogo} alt="Paint logo" className="mr-2 leading-7 logo bg-gradient-to-r from-[#439da6] to-[#26668b] rounded-full" />
-              Aquarelando
-            </Link>
-          <img src={LogoAquarelando2} alt="Logo-Aquarelando" className="p-[5vh] pulsahome" />
+          <img src={LogoAquarelando2} alt="Logo-Aquarelando" className="p-20 pulsahome" />
         </div>
         <div id="bgform" className="w-[100%] p-[10%] pt-[10rem] flex flex-col justify-center">
        <div className="flex justify-center pl-5">
@@ -123,7 +116,7 @@ function Login() {
               <a href="#" type="reset" className="w-full px-2 py-3 ">
                 <span className="text-sm tracking-wide text-white ">
                   <Link to={"/cadastro"}>
-                    Ainda não tem uma conta? Registre-se agora!
+                    Ainda não tem uma conta? <b>Cadastre-se agora!</b>
                   </Link>
                 </span>
               </a>
