@@ -22,7 +22,8 @@ function Perfil() {
 
   return (
     <>
-    <div className='mt-16 ml-16 mb-5 flex bg-white w-96 p-3 rounded-lg'>     
+    <div className='mobilemax:hidden'>
+    <div className='mt-16 ml-16 mb-5 flex bg-white w-96 p-3 rounded-lg '>     
       <img src={usuario.foto} alt={`Foto de perfil de ${usuario.nome}`} className='rounded-full size-16' />
       <header className='ml-5'>
         Olá,<br></br><b>{usuario.nome}</b>
@@ -86,6 +87,44 @@ function Perfil() {
       </section>
       
     </div>
+    </div>
+    {/*Mobile*/}
+    <div className='mobilemin:hidden'>
+    <div>
+      <div className='bg-white p-3 rounded-lg'>
+      <header className='text-center text-xl '>
+        <b>Infomações Pessoais</b>
+      </header>
+    </div>
+    <div className='m flex bg-white  rounded-lg pt-[2rem] pl-3'>     
+      <img src={usuario.foto} alt={`Foto de perfil de ${usuario.nome}`} className='rounded-full size-16' />
+      <header className='ml-5'>
+        Olá,<br></br><b>{usuario.nome}</b>
+      </header>       
+    </div>
+    <div className='bg-white pt-3 rounded-lg p-2'>
+    <div className='my-4 '>
+          <p className='mb-2 text-lg'>Nome: </p>
+          <p className='bg-[#F4E7E7] ml-1 w-96 h-8 rounded-md text-xl text-center'>{usuario.nome}</p>
+        </div>
+
+        <div className='my-4'>
+          <p className='mb-2 text-lg'>Email: </p>
+          <p className='bg-[#F4E7E7] ml-1 w-96 h-8 rounded-md text-xl text-center'>{usuario.email}</p>
+        </div>
+
+        <div className='my-4'>
+          <p className='mb-2 text-lg'>Data de Nascimento: </p>
+          <p className='bg-[#F4E7E7] ml-1 w-96 h-8 rounded-md text-xl text-center'>{usuario.data_nascimento}</p>
+        </div>
+
+        <div>
+          <p className='mb-2 text-lg'>CPF: </p>
+          <p className='bg-[#F4E7E7] ml-1 w-96 h-8 rounded-md text-xl text-center'>{usuario.cpf}</p>
+        </div>
+    </div>
+    </div>
+    </div>
   
   
   </>
@@ -93,4 +132,3 @@ function Perfil() {
 }
 
 export default Perfil
-

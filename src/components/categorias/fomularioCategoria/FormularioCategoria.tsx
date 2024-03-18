@@ -1,5 +1,5 @@
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { atualizar, buscar, cadastrar } from '../../../services/Services';
 import Categoria from '../../../models/Categoria';
@@ -117,73 +117,80 @@ function FormularioCategoria() {
     }
   }, [token]);
   console.log(categoria)
-  return (
-    <div className="md:w-[50rem] w-full  container flex flex-col rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10
-     bg-gradient-to-b from-[#439da6] to-[#26668b] border-4 border-[#fa769c] border-x-[#FD98B4]">
-      <h1 className="text-4xl text-center my-8">
-        {id === undefined ? 'Cadastre uma nova categoria' : 'Editar categoria'}
-      </h1>
 
-      <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="nome">Nome da Categoria</label>
-          <input
-            type="text"
-            placeholder="Nome"
-            name='nome'
-            className="border-2 border-slate-700 rounded p-2"
+  return (
+    <div className="md:w-[45rem] w-full container flex flex-col p-5 rounded-2xl overflow-hidden items-center justify-center mx-auto duration-500 bg-white shadow-md hover:shadow-xl mt-10 mb-10 bg-gradient-to-b fro border-4 mobilemax:m-1">
+      <h1 className="text-3xl text-center my-7">{id !== undefined ? 'Editar Categoria' : 'Cadastrar uma nova Categoria'}</h1>
+      <form onSubmit={gerarNovaCategoria} className="w-full flex flex-col gap-4 sm:w-3/4 sm:flex-row sm:flex-wrap">
+        <div className="flex flex-col sm:flex-row gap-10">
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label htmlFor="nome">Nome da Categoria</label>
+            <input
             value={categoria.nome}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição da Categoria</label>
-          <input
-            type="text"
-            placeholder="Descrição"
-            name='descricao'
-            className="border-2 border-slate-700 rounded p-2"
-            value={categoria.descricao}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex items-center justify-center gap-20 mb-4">
-          <label htmlFor="ativo">
-
-            <input
-              type="radio"
-              id="ativo"
-              name="disponivel"
-              className="border-2 border-slate-700 rounded"
-              value="true"
-              onChange={handleDisponivel}
+              type="text"
+              placeholder="Nome"
+              name='nome'
+              required
+              className="border-2 border-gray-400 rounded w-full sm:w-[15rem] focus:outline-none focus:border-blue-500"
             />
-
-            {' '}Disponivel ✅
-          </label>
-
-          <label htmlFor="inativo">
+          </div>
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label htmlFor="descricao">Descrição da Categoria</label>
             <input
-              type="radio"
-              id="inativo"
-              name="disponivel"
-              className="border-2 border-slate-700 rounded p-2"
-              value="false"
-              onChange={handleDisponivel}
+              value={categoria.descricao}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              type="text"
+              placeholder="Descrição"
+              name="descricao"
+              required
+              className="border-2 border-gray-400 rounded w-full sm:w-[16rem] focus:outline-none focus:border-blue-500"
             />
-            {' '}Indisponivel ❌
-          </label>
+            
+          </div>
         </div>
-
-        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 md:gap-20 mb-4">
-          <button className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-full md:w-40 py-2 block mb-8 md:mb-0" onClick={back}>
+        <div className="flex flex-col w-full">
+          
+          <div>
+            <label htmlFor="ativo">
+              <input
+                type="radio"
+                id="ativo"
+                name="disponivel"
+                className="border-2 border-gray-400 rounded"
+                value="true"
+                onChange={handleDisponivel}
+              />
+              {' '}Disponível ✅
+            </label>
+          </div>
+          <div>
+            <label htmlFor="inativo">
+              <input
+                type="radio"
+                id="inativo"
+                name="disponivel"
+                className="border-2 border-gray-400 rounded p-2"
+                value="false"
+                onChange={handleDisponivel}
+              />
+              {' '}Indisponível ❌
+            </label>
+          </div>
+        </div>
+        <div className="flex flex-col sm:flex-row mx-auto gap-6 mb-3">
+          <button className="rounded-xl text-white bg-[#FD98B4] hover:bg-[#439DA6] w-full sm:w-auto p-3 px-9 block" onClick={back}>
             Voltar
           </button>
-          <button
-            className="rounded-xl text-slate-100 bg-[#FD98B4] hover:bg-[#439DA6] w-full md:w-40 py-2 block mb-8"
-            type="submit"
-          >
-            {id === undefined ? 'Cadastrar' : 'Editar'}
+          <button type="submit" className="rounded-xl text-white bg-[#FD98B4] hover:bg-[#439DA6] w-full sm:w-auto p-3 px-9 block">
+            {id !== undefined ? 'Editar' : 'Cadastrar'}
+          </button>
+          <button>
+             <Link to={`/deletarCategoria/${categoria.id}`}>
+            <button className="rounded-xl text-white bg-[#FD98B4] hover:bg-[#439DA6] w-full sm:w-auto p-3 px-9 block" >
+              Deletar
+            </button>
+          </Link>
           </button>
         </div>
       </form>

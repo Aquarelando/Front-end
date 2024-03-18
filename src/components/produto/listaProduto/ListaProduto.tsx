@@ -86,7 +86,7 @@ function ListaProdutos() {
     if (usuario.tipo === "dev") {
       ListaProdutosComponent = (
         <>
-          <div className="py-10 px-20">
+          <div className="py-10 px-20 mobilemax:hidden">
             <div className="bg-white rounded-t-lg p-5">
               {/* Pagina Produtos */}
               <div className="flex mt-3 p-5 text-[#5C5C5C] text-3xl font-bold items-center justify-between">
@@ -147,6 +147,44 @@ function ListaProdutos() {
             </div>
           </div>
         </div>
+
+{/*Mobile*/}
+<div className="flex flex-col mt-[10%] justify-around ">
+  <div className="flex justify-center items-center"><h1 className="py-2 px-4 border-b text-3xl font-bold"> Produtos </h1><Link to="/produtos/novo">
+                <button className="bg-[#48ACB6]  text-white px-3 py-1 rounded-full items-center text-sm font-normal">Add Produto</button>
+              </Link></div>
+                  {filteredProducts.map((produto) => (
+                    <div className="flex  justify-around bg-white w-auto h-[20vh]  border-2 rounded-3xl mt-3">
+                    <div className="w-[100%] flex justify-center items-center">
+                    <img src={produto.foto} alt="Product" className="h-[50%]  " />
+                    </div>
+                    <div  key={produto.id} className="flex flex-wrap">
+                      {/* Link para a página de edição */}
+                      <h1 className="py-2 px-4 border-b flex items-center">{produto.nome} <Link to={`/produtos/editar/${produto.id}`}>
+                        <img src={Editar} alt="Botão de editar" className="w-6 mr-2 ml-8" />
+                      </Link></h1>
+                      <h1 className="py-2 px-4 border-b">
+                        {new Intl.DateTimeFormat('pt-BR', {
+                          day: '2-digit',
+                          month: 'short',
+                          year: 'numeric',
+                        }).format(new Date(produto.dataValidade))}
+                      </h1>
+                      <h1 className="py-2 px-4 border-b">{produto.categoria.nome}</h1>
+                      <h1 className="py-2 px-4 border-b">
+                        {Intl.NumberFormat('pt-BR', {
+                          style: 'currency',
+                          currency: 'BRL',
+                        }).format(produto.preco)}
+                      </h1>
+                      <h1 className={`py-2 px-4 border-b ${getStatusClass(produto.categoria.disponivel)}`}>
+                        {produto.categoria.disponivel ? 'Disponível' : 'Indisponível'}
+                      </h1>                    
+                    </div>
+                    </div>
+                  ))}
+                </div>
+
       </>
       );
 

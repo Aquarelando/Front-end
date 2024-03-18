@@ -31,8 +31,8 @@ function DoacaoPage() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gradient-to-b from-[#439DA6] to-[#26668b]">
-      <div className="w-3/4 max-w-lg relative">
+    <div className="flex justify-center items-center h-screen bg-gradient-to-b from-[#439DA6] to-[#26668b] ">
+      <div className="w-3/4 max-w-lg mobilemax:flex ">
         <div className="bg-[#FD98B4] rounded-lg shadow-lg p-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Faça sua Doação</h2>
           <form onSubmit={handleSubmit}>
@@ -79,10 +79,10 @@ function DoacaoPage() {
             </div>
           </form>
         </div>
-        <div className="absolute top-[-25px] left-[-120px]">
+        <div className="absolute top-[-25px] left-[-120px] mobilemax:hidden">
           <img src={Menino} alt="menino" className="h-auto w-32" /> 
         </div>
-        <div className="absolute top-[-10px] right-[-116px]">
+        <div className="absolute top-[-10px] right-[-116px] mobilemax:hidden ">
           <img src={Menina} alt="menina" className="h-auto w-32" /> 
         </div>
       </div>

@@ -259,12 +259,9 @@ function FormularioProduto() {
               Deletar
             </button>
           </Link>
-
           <button className="rounded-xl text-white bg-[#857a7d] hover:bg-[#439DA6] w-full sm:w-auto p-3 px-9 block" onClick={back}>
             Voltar
           </button>
-
-
           <button disabled={carregandoCategoria} type='submit' className="rounded-xl text-white bg-[#FD98B4] hover:bg-[#439DA6] w-full sm:w-auto p-3 px-9 block">
             {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
           </button>
