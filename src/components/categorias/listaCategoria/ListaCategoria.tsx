@@ -140,7 +140,7 @@ function ListaCategoria() {
               </Link></div>
             <div className="flex flex-wrap mt-[10%] justify-center gap-5 ">
             {filteredProducts.map((categoria) => (
-                    <div className="w-[45vw] border-2 rounded-3xl h-[28vh] pt-3 mt-1 bg-white text-center ">
+                    <div className="w-[45vw] border-2 rounded-3xl h-[35vh] pt-3 mt-1 bg-white text-center ">
                     <h1 className="py-3 px-4  flex items-center justify-center ">{categoria.nome}
                     <Link to={`/editarCategoria/${categoria.id}`}>
                       <img

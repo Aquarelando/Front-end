@@ -95,19 +95,19 @@ function Home() {
         </div>
         <div>
           <div className="">
-            <div className="caixa text-2xl p-3 text-white">
+            <div className="caixa text-2xl p-3 text-white ">
               <div className="mb-10 pr-[5%] pl-[5%] text-center">
-                <h1 className="text-5xl font-semibold text-shadow ">1K+</h1>
+                <h1 className="text-4xl font-semibold text-shadow ">1K+</h1>
                 <p className="text-base">Reviews</p>
               </div>
 
               <div className="pr-[5%] text-center">
-                <h1 className="text-5xl font-semibold text-shadow ">5K+</h1>
+                <h1 className="text-4xl font-semibold text-shadow ">5K+</h1>
                 <p className="text-base">Vendas</p>
               </div>
 
               <div>
-                <h1 className="text-5xl font-semibold text-shadow text-center">
+                <h1 className="text-4xl font-semibold text-shadow text-center">
                   150K+
                 </h1>
                 <p className="text-base text-center">Crianças ajudadas</p>

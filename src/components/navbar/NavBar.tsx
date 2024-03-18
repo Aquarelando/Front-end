@@ -508,7 +508,8 @@ function Navbar() {
 
                         {/* Profile dropdown */}
                         <Menu as="div" className="relative ml-3">
-                          <div>
+                          <div className='flex items-center'>
+                          <Link to='/cart'><img src={ShoppingCart} alt="Carrinho" className="mr-2 carrinho mt-0" /></Link>
                             <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                               <span className="absolute -inset-1.5" />
                               <span className="sr-only">Abra o Menu</span>
