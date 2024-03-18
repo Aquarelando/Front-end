@@ -68,7 +68,7 @@ function Perfil() {
           <p className='bg-[#F4E7E7] ml-1 w-96 h-8 rounded-md text-xl text-center'>{usuario.nome}</p>
         </div>
 
-        <div className='my-4'>
+        <div className='w-[100%]'>
           <p className='mb-2 text-lg'>Email: </p>
           <p className='bg-[#F4E7E7] ml-1 w-96 h-8 rounded-md text-xl text-center'>{usuario.email}</p>
         </div>
@@ -89,14 +89,14 @@ function Perfil() {
     </div>
     </div>
     {/*Mobile*/}
-    <div className='mobilemin:hidden'>
+    <div className='mobilemin:hidden pt-3'>
     <div>
-      <div className='bg-white p-3 rounded-lg'>
-      <header className='text-center text-xl '>
+      <div className='bg-white p-3 rounded-lg pt-3'>
+      <header className='text-center text-xl pt-3'>
         <b>Infomações Pessoais</b>
       </header>
     </div>
-    <div className='m flex bg-white  rounded-lg pt-[2rem] pl-3'>     
+    <div className='m flex bg-white  rounded-lg pt-[3rem] pl-3'>     
       <img src={usuario.foto} alt={`Foto de perfil de ${usuario.nome}`} className='rounded-full size-16' />
       <header className='ml-5'>
         Olá,<br></br><b>{usuario.nome}</b>
@@ -104,23 +104,23 @@ function Perfil() {
     </div>
     <div className='bg-white pt-3 rounded-lg p-2'>
     <div className='my-4 '>
-          <p className='mb-2 text-lg'>Nome: </p>
-          <p className='bg-[#F4E7E7] ml-1 w-96 h-8 rounded-md text-xl text-center'>{usuario.nome}</p>
+          <p className='mb-2 text-lg pt-3'>Nome: </p>
+          <p className='bg-[#F4E7E7] ml-1 w-full h-8 rounded-md text-xl text-center'>{usuario.nome}</p>
         </div>
 
-        <div className='my-4'>
+        <div className='my-4 pt-3'>
           <p className='mb-2 text-lg'>Email: </p>
-          <p className='bg-[#F4E7E7] ml-1 w-96 h-8 rounded-md text-xl text-center'>{usuario.email}</p>
+          <p className='bg-[#F4E7E7] m-1 w-full h-8 rounded-md text-xl text-center'>{usuario.email}</p>
         </div>
 
-        <div className='my-4'>
+        <div className='my-4 pt-3'>
           <p className='mb-2 text-lg'>Data de Nascimento: </p>
-          <p className='bg-[#F4E7E7] ml-1 w-96 h-8 rounded-md text-xl text-center'>{usuario.data_nascimento}</p>
+          <p className='bg-[#F4E7E7] ml-1 w-full h-8 rounded-md text-xl text-center'>{usuario.data_nascimento}</p>
         </div>
 
         <div>
-          <p className='mb-2 text-lg'>CPF: </p>
-          <p className='bg-[#F4E7E7] ml-1 w-96 h-8 rounded-md text-xl text-center'>{usuario.cpf}</p>
+          <p className='mb-2 text-lg pt-3'>CPF: </p>
+          <p className='bg-[#F4E7E7] ml-1 w-full h-8 rounded-md text-xl text-center mb-5'>{usuario.cpf}</p>
         </div>
     </div>
     </div>

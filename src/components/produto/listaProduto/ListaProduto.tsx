@@ -154,7 +154,7 @@ function ListaProdutos() {
                 <button className="bg-[#48ACB6]  text-white px-3 py-1 rounded-full items-center text-sm font-normal">Add Produto</button>
               </Link></div>
                   {filteredProducts.map((produto) => (
-                    <div className="flex  justify-around bg-white w-auto h-[20vh]  border-2 rounded-3xl mt-3">
+                    <div className="flex  justify-around bg-white w-auto h-[35vh]  border-2 rounded-3xl mt-3">
                     <div className="w-[100%] flex justify-center items-center">
                     <img src={produto.foto} alt="Product" className="h-[50%]  " />
                     </div>
