@@ -149,7 +149,7 @@ function ListaProdutos() {
         </div>
 
 {/*Mobile*/}
-<div className="flex flex-col mt-[10%] justify-around ">
+<div className="flex flex-col mt-[10%] justify-around mobilemin:hidden">
   <div className="flex justify-center items-center"><h1 className="py-2 px-4 border-b text-3xl font-bold"> Produtos </h1><Link to="/produtos/novo">
                 <button className="bg-[#48ACB6]  text-white px-3 py-1 rounded-full items-center text-sm font-normal">Add Produto</button>
               </Link></div>
